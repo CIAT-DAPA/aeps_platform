@@ -1,0 +1,2 @@
+cd CIAT.DAPA.AEPS.Data
+dotnet ef dbcontext scaffold "server=localhost;port=3306;user=root;password=root;database=aeps_2_0" MySql.Data.EntityFrameworkCore -o Database -c AEPSContext -d -f
