@@ -117,58 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FrmBlocksCreated" xml:space="preserve">
-    <value>Fecha creado</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
   </data>
-  <data name="FrmBlocksDescription" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="Return" xml:space="preserve">
+    <value>Volver al listado</value>
   </data>
-  <data name="FrmBlocksEnable" xml:space="preserve">
-    <value>Habilitado</value>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Detalles</value>
   </data>
-  <data name="FrmBlocksExtId" xml:space="preserve">
-    <value>Código externo</value>
-  </data>
-  <data name="FrmBlocksId" xml:space="preserve">
-    <value>Código</value>
-  </data>
-  <data name="FrmBlocksName" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="FrmBlocksRepeat" xml:space="preserve">
-    <value>Repetir</value>
-  </data>
-  <data name="FrmBlocksTimes" xml:space="preserve">
-    <value>Veces</value>
-  </data>
-  <data name="FrmBlocksTitle" xml:space="preserve">
-    <value>Título</value>
-  </data>
-  <data name="FrmBlocksUpdated" xml:space="preserve">
-    <value>Fecha actualizado</value>
-  </data>
-  <data name="FrmFormsCreated" xml:space="preserve">
-    <value>Fecha creado</value>
-  </data>
-  <data name="FrmFormsDescription" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="FrmFormsEnable" xml:space="preserve">
-    <value>Habilitado</value>
-  </data>
-  <data name="FrmFormsExtId" xml:space="preserve">
-    <value>Código externo</value>
-  </data>
-  <data name="FrmFormsId" xml:space="preserve">
-    <value>Código</value>
-  </data>
-  <data name="FrmFormsName" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="FrmFormsTitle" xml:space="preserve">
-    <value>Título</value>
-  </data>
-  <data name="FrmFormsUpdated" xml:space="preserve">
-    <value>Fecha actualizado</value>
+  <data name="Title" xml:space="preserve">
+    <value>Bloques</value>
   </data>
 </root>

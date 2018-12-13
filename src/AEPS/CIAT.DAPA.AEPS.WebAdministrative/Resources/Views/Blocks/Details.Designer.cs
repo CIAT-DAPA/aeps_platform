@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
+namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Blocks {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms.Details", typeof(Details).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Blocks.Details", typeof(Details).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -88,7 +88,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forms.
+        ///   Looks up a localized string similar to Blocks.
         /// </summary>
         public static string Title {
             get {

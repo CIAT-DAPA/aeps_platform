@@ -16,6 +16,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Views\Blocks\Create.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Create.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Blocks\Delete.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Delete.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Blocks\Details.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Details.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Blocks\Edit.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Blocks\Index.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Views\Forms\Create.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -41,9 +66,43 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Views\Shared\_Layout.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_Layout.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Views\Blocks\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Blocks\Delete.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Delete.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Blocks\Details.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Blocks\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Blocks\Edit.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Blocks\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Blocks\Index.es.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Blocks\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Forms\Create.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
@@ -72,6 +131,10 @@
     <EmbeddedResource Update="Resources\Views\Forms\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\_Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Layout.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

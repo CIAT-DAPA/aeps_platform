@@ -88,7 +88,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create.
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Subtitle {
             get {

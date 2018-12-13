@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
+namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Blocks {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Details {
+    public class Delete {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Details() {
+        internal Delete() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms.Details", typeof(Details).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Blocks.Delete", typeof(Delete).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,11 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to Are you sure you want to delete this?.
         /// </summary>
-        public static string Edit {
+        public static string Question {
             get {
-                return ResourceManager.GetString("Edit", resourceCulture);
+                return ResourceManager.GetString("Question", resourceCulture);
             }
         }
         
@@ -79,7 +79,16 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Details.
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Subtitle {
             get {
@@ -88,7 +97,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forms.
+        ///   Looks up a localized string similar to Blocks.
         /// </summary>
         public static string Title {
             get {

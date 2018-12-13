@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
+namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Details {
+    public class _Layout {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Details() {
+        internal _Layout() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms.Details", typeof(Details).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared._Layout", typeof(_Layout).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,29 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to Blocks.
         /// </summary>
-        public static string Edit {
+        public static string Blocks {
             get {
-                return ResourceManager.GetString("Edit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Back to list.
-        /// </summary>
-        public static string Return {
-            get {
-                return ResourceManager.GetString("Return", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Details.
-        /// </summary>
-        public static string Subtitle {
-            get {
-                return ResourceManager.GetString("Subtitle", resourceCulture);
+                return ResourceManager.GetString("Blocks", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Forms.
         /// </summary>
-        public static string Title {
+        public static string Forms {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("Forms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AEPS.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
     }

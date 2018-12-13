@@ -61,6 +61,96 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        public static string FrmBlocksCreated {
+            get {
+                return ResourceManager.GetString("FrmBlocksCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string FrmBlocksDescription {
+            get {
+                return ResourceManager.GetString("FrmBlocksDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string FrmBlocksEnable {
+            get {
+                return ResourceManager.GetString("FrmBlocksEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string FrmBlocksExtId {
+            get {
+                return ResourceManager.GetString("FrmBlocksExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmBlocksId {
+            get {
+                return ResourceManager.GetString("FrmBlocksId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FrmBlocksName {
+            get {
+                return ResourceManager.GetString("FrmBlocksName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repeat.
+        /// </summary>
+        public static string FrmBlocksRepeat {
+            get {
+                return ResourceManager.GetString("FrmBlocksRepeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Times.
+        /// </summary>
+        public static string FrmBlocksTimes {
+            get {
+                return ResourceManager.GetString("FrmBlocksTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string FrmBlocksTitle {
+            get {
+                return ResourceManager.GetString("FrmBlocksTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated.
+        /// </summary>
+        public static string FrmBlocksUpdated {
+            get {
+                return ResourceManager.GetString("FrmBlocksUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Created.
         /// </summary>
         public static string FrmFormsCreated {
