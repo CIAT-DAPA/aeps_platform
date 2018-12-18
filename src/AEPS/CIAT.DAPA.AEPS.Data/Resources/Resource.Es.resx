@@ -171,4 +171,37 @@
   <data name="FrmFormsUpdated" xml:space="preserve">
     <value>Fecha actualizado</value>
   </data>
+  <data name="FrmQuestionsBlock" xml:space="preserve">
+    <value>Bloque</value>
+  </data>
+  <data name="FrmQuestionsCreated" xml:space="preserve">
+    <value>Fecha creado</value>
+  </data>
+  <data name="FrmQuestionsDescription" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="FrmQuestionsEnable" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="FrmQuestionsExtId" xml:space="preserve">
+    <value>Código externo</value>
+  </data>
+  <data name="FrmQuestionsId" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="FrmQuestionsLabel" xml:space="preserve">
+    <value>Etiqueta</value>
+  </data>
+  <data name="FrmQuestionsName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="FrmQuestionsOrder" xml:space="preserve">
+    <value>Orden</value>
+  </data>
+  <data name="FrmQuestionsType" xml:space="preserve">
+    <value>Tipo de pregunta</value>
+  </data>
+  <data name="FrmQuestionsUpdated" xml:space="preserve">
+    <value>Fecha actualizado</value>
+  </data>
 </root>

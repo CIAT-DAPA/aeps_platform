@@ -1,4 +1,5 @@
 ﻿using CIAT.DAPA.AEPS.Data.Database;
+using CIAT.DAPA.AEPS.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,23 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CIAT.DAPA.AEPS.Data.Factory
+namespace CIAT.DAPA.AEPS.Data.Repositories
 {
     /// <summary>
     /// This class allow to access to the information about forms
     /// </summary>
-    public class FactoryFrmForms : FactoryDB<FrmForms>
+    public class RepositoryFrmForms : RepositoryBase, IAEPSRepository<FrmForms>
     {
         /// <summary>
         /// Method Construct
         /// </summary>
         /// <param name="context">Database context</param>
-        public FactoryFrmForms(AEPSContext context) :base(context)
+        public RepositoryFrmForms(AEPSContext context) :base(context)
         {
 
         }
-                
-        public async override Task<FrmForms> InsertAsync(FrmForms entity)
+
+        /// <summary>
+        /// Method that add new entity to the database
+        /// </summary>
+        /// <param name="entity">Entity to save</param>
+        /// <returns>Entity with new Object ID</returns>
+        public async Task<FrmForms> InsertAsync(FrmForms entity)
         {
             DateTime now = DateTime.Now;
             entity.Created = now;
@@ -33,7 +39,19 @@ namespace CIAT.DAPA.AEPS.Data.Factory
             return entity;
         }
 
-        public async override Task<bool> UpdateAsync(FrmForms entity)
+        /// <summary>
+        /// Method that delete one entity in the database.
+        /// </summary>
+        /// <param name="entity">Entity to delete</param>
+        /// <returns>True if the register has been deleted, otherwise false</returns>      
+        public async Task<bool> DeleteAsync(FrmForms entity)
+        {
+            DB.FrmForms.Remove(entity);
+            int records = await DB.SaveChangesAsync();
+            return records > 0;
+        }
+
+        public async Task<bool> UpdateAsync(FrmForms entity)
         {
             FrmForms model = await DB.FrmForms.FindAsync(entity.Id);
             int records = 0;
@@ -50,19 +68,6 @@ namespace CIAT.DAPA.AEPS.Data.Factory
             return records > 0;
         }
 
-        public async override Task<bool> DisableAsync(FrmForms entity)
-        {
-            FrmForms model = await DB.FrmForms.SingleOrDefaultAsync(p=> p.Id == entity.Id);
-            int records = 0;
-            if (model != null)
-            {
-                model.Enable = 0;
-                model.Updated = DateTime.Now;
-                DB.Entry(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                records = await DB.SaveChangesAsync();
-            }
-            return records > 0;
-        }
 
         /// <summary>
         /// Method that return all forms registered in the database
