@@ -58,6 +58,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            await CreateSelectListAsync(entity);
             return View(entity);
         }
 
@@ -78,12 +79,12 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                 return NotFound();
             }
 
-            var entity = await _context.GetRepository<FrmBlocks>().ByIdAsync(id.Value);
+            var entity = await _context.GetRepository<FrmQuestions>().ByIdAsync(id.Value);
             if (entity == null)
             {
                 return NotFound();
             }
-            await CreateSelectListAsync();
+            await CreateSelectListAsync(entity);
             return View(entity);
         }
 
@@ -96,6 +97,18 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
             ViewData["Block"] = new SelectList((await _context.GetRepository<FrmBlocks>().ToListEnableAsync()), "Id", "Description");
             ViewData["Type"] = new SelectList( question.ToListType());
+            return true;
+        }
+
+        /// <summary>
+        /// Method that creates all select list items
+        /// </summary>
+        /// <returns></returns>
+        private async Task<bool> CreateSelectListAsync(FrmQuestions entity)
+        {
+            var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
+            ViewData["Block"] = new SelectList((await _context.GetRepository<FrmBlocks>().ToListEnableAsync()), "Id", "Description",entity.Block);
+            ViewData["Type"] = new SelectList(question.ToListType(), entity.Type);
             return true;
         }
     }
