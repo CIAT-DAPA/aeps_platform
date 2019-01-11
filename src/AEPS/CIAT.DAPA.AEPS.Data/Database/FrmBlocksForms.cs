@@ -23,9 +23,9 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Block")]
         [InverseProperty("FrmBlocksForms")]
-        public FrmBlocks BlockNavigation { get; set; }
+        public virtual FrmBlocks BlockNavigation { get; set; }
         [ForeignKey("Form")]
         [InverseProperty("FrmBlocksForms")]
-        public FrmForms FormNavigation { get; set; }
+        public virtual FrmForms FormNavigation { get; set; }
     }
 }

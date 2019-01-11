@@ -37,8 +37,8 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Question")]
         [InverseProperty("FrmOptions")]
-        public FrmQuestions QuestionNavigation { get; set; }
+        public virtual FrmQuestions QuestionNavigation { get; set; }
         [InverseProperty("OptionNavigation")]
-        public ICollection<FarResponsesOptions> FarResponsesOptions { get; set; }
+        public virtual ICollection<FarResponsesOptions> FarResponsesOptions { get; set; }
     }
 }

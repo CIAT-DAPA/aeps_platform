@@ -57,10 +57,10 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Municipality")]
         [InverseProperty("SocPeople")]
-        public ConMunicipalities MunicipalityNavigation { get; set; }
+        public virtual ConMunicipalities MunicipalityNavigation { get; set; }
         [InverseProperty("FarmerNavigation")]
-        public ICollection<FarFarms> FarFarms { get; set; }
+        public virtual ICollection<FarFarms> FarFarms { get; set; }
         [InverseProperty("PersonNavigation")]
-        public ICollection<SocTechnicalAssistants> SocTechnicalAssistants { get; set; }
+        public virtual ICollection<SocTechnicalAssistants> SocTechnicalAssistants { get; set; }
     }
 }

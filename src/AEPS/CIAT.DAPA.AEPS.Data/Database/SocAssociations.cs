@@ -30,6 +30,6 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public DateTime Updated { get; set; }
 
         [InverseProperty("AssociationNavigation")]
-        public ICollection<SocTechnicalAssistants> SocTechnicalAssistants { get; set; }
+        public virtual ICollection<SocTechnicalAssistants> SocTechnicalAssistants { get; set; }
     }
 }

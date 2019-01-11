@@ -64,20 +64,20 @@ namespace CIAT.DAPA.AEPS.Data.Database
         [Display(Name = "FrmQuestionsBlockNavigation", ResourceType = typeof(Resource))]
         [ForeignKey("Block")]
         [InverseProperty("FrmQuestions")]
-        public FrmBlocks BlockNavigation { get; set; }
+        public virtual FrmBlocks BlockNavigation { get; set; }
         [InverseProperty("QuestionNavigation")]
-        public ICollection<FarAnswers> FarAnswers { get; set; }
+        public virtual ICollection<FarAnswers> FarAnswers { get; set; }
         [InverseProperty("QuestionNavigation")]
-        public ICollection<FarResponsesBool> FarResponsesBool { get; set; }
+        public virtual ICollection<FarResponsesBool> FarResponsesBool { get; set; }
         [InverseProperty("QuestionNavigation")]
-        public ICollection<FarResponsesDate> FarResponsesDate { get; set; }
+        public virtual ICollection<FarResponsesDate> FarResponsesDate { get; set; }
         [InverseProperty("QuestionNavigation")]
-        public ICollection<FarResponsesNumeric> FarResponsesNumeric { get; set; }
+        public virtual ICollection<FarResponsesNumeric> FarResponsesNumeric { get; set; }
         [InverseProperty("QuestionNavigation")]
-        public ICollection<FarResponsesOptions> FarResponsesOptions { get; set; }
+        public virtual ICollection<FarResponsesOptions> FarResponsesOptions { get; set; }
         [InverseProperty("QuestionNavigation")]
-        public ICollection<FarResponsesText> FarResponsesText { get; set; }
+        public virtual ICollection<FarResponsesText> FarResponsesText { get; set; }
         [InverseProperty("QuestionNavigation")]
-        public ICollection<FrmOptions> FrmOptions { get; set; }
+        public virtual ICollection<FrmOptions> FrmOptions { get; set; }
     }
 }

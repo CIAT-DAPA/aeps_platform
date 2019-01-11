@@ -31,6 +31,6 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public DateTime Updated { get; set; }
 
         [InverseProperty("CountryNavigation")]
-        public ICollection<ConStates> ConStates { get; set; }
+        public virtual ICollection<ConStates> ConStates { get; set; }
     }
 }

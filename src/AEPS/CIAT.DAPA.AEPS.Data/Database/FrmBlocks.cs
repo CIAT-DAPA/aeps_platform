@@ -53,8 +53,8 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public DateTime Updated { get; set; }
 
         [InverseProperty("BlockNavigation")]
-        public ICollection<FrmBlocksForms> FrmBlocksForms { get; set; }
+        public virtual ICollection<FrmBlocksForms> FrmBlocksForms { get; set; }
         [InverseProperty("BlockNavigation")]
-        public ICollection<FrmQuestions> FrmQuestions { get; set; }
+        public virtual ICollection<FrmQuestions> FrmQuestions { get; set; }
     }
 }

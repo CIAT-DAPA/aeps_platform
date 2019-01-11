@@ -47,8 +47,8 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public DateTime Updated { get; set; }
 
         [InverseProperty("FormNavigation")]
-        public ICollection<FarProductionEvents> FarProductionEvents { get; set; }
+        public virtual ICollection<FarProductionEvents> FarProductionEvents { get; set; }
         [InverseProperty("FormNavigation")]
-        public ICollection<FrmBlocksForms> FrmBlocksForms { get; set; }
+        public virtual ICollection<FrmBlocksForms> FrmBlocksForms { get; set; }
     }
 }

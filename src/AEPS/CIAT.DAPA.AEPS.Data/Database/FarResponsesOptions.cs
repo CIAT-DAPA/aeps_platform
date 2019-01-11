@@ -23,12 +23,12 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Event")]
         [InverseProperty("FarResponsesOptions")]
-        public FarProductionEvents EventNavigation { get; set; }
+        public virtual FarProductionEvents EventNavigation { get; set; }
         [ForeignKey("Option")]
         [InverseProperty("FarResponsesOptions")]
-        public FrmOptions OptionNavigation { get; set; }
+        public virtual FrmOptions OptionNavigation { get; set; }
         [ForeignKey("Question")]
         [InverseProperty("FarResponsesOptions")]
-        public FrmQuestions QuestionNavigation { get; set; }
+        public virtual FrmQuestions QuestionNavigation { get; set; }
     }
 }

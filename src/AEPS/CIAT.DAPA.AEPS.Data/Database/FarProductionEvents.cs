@@ -40,24 +40,24 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Form")]
         [InverseProperty("FarProductionEvents")]
-        public FrmForms FormNavigation { get; set; }
+        public virtual FrmForms FormNavigation { get; set; }
         [ForeignKey("Plot")]
         [InverseProperty("FarProductionEvents")]
-        public FarPlots PlotNavigation { get; set; }
+        public virtual FarPlots PlotNavigation { get; set; }
         [ForeignKey("Technical")]
         [InverseProperty("FarProductionEvents")]
-        public SocTechnicalAssistants TechnicalNavigation { get; set; }
+        public virtual SocTechnicalAssistants TechnicalNavigation { get; set; }
         [InverseProperty("EventNavigation")]
-        public ICollection<FarAnswers> FarAnswers { get; set; }
+        public virtual ICollection<FarAnswers> FarAnswers { get; set; }
         [InverseProperty("EventNavigation")]
-        public ICollection<FarResponsesBool> FarResponsesBool { get; set; }
+        public virtual ICollection<FarResponsesBool> FarResponsesBool { get; set; }
         [InverseProperty("EventNavigation")]
-        public ICollection<FarResponsesDate> FarResponsesDate { get; set; }
+        public virtual ICollection<FarResponsesDate> FarResponsesDate { get; set; }
         [InverseProperty("EventNavigation")]
-        public ICollection<FarResponsesNumeric> FarResponsesNumeric { get; set; }
+        public virtual ICollection<FarResponsesNumeric> FarResponsesNumeric { get; set; }
         [InverseProperty("EventNavigation")]
-        public ICollection<FarResponsesOptions> FarResponsesOptions { get; set; }
+        public virtual ICollection<FarResponsesOptions> FarResponsesOptions { get; set; }
         [InverseProperty("EventNavigation")]
-        public ICollection<FarResponsesText> FarResponsesText { get; set; }
+        public virtual ICollection<FarResponsesText> FarResponsesText { get; set; }
     }
 }
