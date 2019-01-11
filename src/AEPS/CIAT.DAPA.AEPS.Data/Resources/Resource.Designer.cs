@@ -232,6 +232,15 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string FrmQuestionsBlockNavigation {
+            get {
+                return ResourceManager.GetString("FrmQuestionsBlockNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date created.
         /// </summary>
         public static string FrmQuestionsCreated {

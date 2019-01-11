@@ -15,6 +15,8 @@ namespace CIAT.DAPA.AEPS.Data.Interfaces
 
         Task<List<T>> ToListAsync();
 
+        Task<List<T>> ToListEnableAsync();
+
         Task<T> ByIdAsync(int id);
     }
 }

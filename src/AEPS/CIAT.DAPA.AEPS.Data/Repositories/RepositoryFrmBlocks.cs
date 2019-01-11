@@ -84,6 +84,15 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         }
 
         /// <summary>
+        /// Method that return all entities enable in the database
+        /// </summary>
+        /// <returns>List of entities</returns>
+        public async Task<List<FrmBlocks>> ToListEnableAsync()
+        {
+            return await DB.FrmBlocks.Where(p=>p.Enable == 1).ToListAsync();
+        }
+
+        /// <summary>
         /// Method that search a entity by its id
         /// </summary>
         /// <param name="id">Entity id</param>

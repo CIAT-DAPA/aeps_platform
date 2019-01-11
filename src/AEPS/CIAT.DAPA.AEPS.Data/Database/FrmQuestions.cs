@@ -61,6 +61,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
         [Column("updated")]
         public DateTime Updated { get; set; }
 
+        [Display(Name = "FrmQuestionsBlockNavigation", ResourceType = typeof(Resource))]
         [ForeignKey("Block")]
         [InverseProperty("FrmQuestions")]
         public FrmBlocks BlockNavigation { get; set; }

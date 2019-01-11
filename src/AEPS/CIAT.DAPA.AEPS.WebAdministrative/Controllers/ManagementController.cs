@@ -50,7 +50,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         }
 
         // GET: Controller/Create
-        public virtual IActionResult Create()
+        public async virtual Task<IActionResult> Create()
         {
             return View();
         }

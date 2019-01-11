@@ -51,6 +51,11 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
             return records > 0;
         }
 
+        /// <summary>
+        /// Method that updated one entity in the database.
+        /// </summary>
+        /// <param name="entity">Entity to update</param>
+        /// <returns>True if the register has been updated, otherwise false</returns>
         public async Task<bool> UpdateAsync(FrmForms entity)
         {
             FrmForms model = await DB.FrmForms.FindAsync(entity.Id);
@@ -72,16 +77,25 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         /// <summary>
         /// Method that return all forms registered in the database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of forms</returns>
         public async Task<List<FrmForms>> ToListAsync()
         {
             return await DB.FrmForms.ToListAsync();
         }
 
         /// <summary>
-        /// Method that search one form by its id
+        /// Method that return all entities enable in the database
         /// </summary>
-        /// <param name="id">Id form</param>
+        /// <returns>List of entities</returns>
+        public async Task<List<FrmForms>> ToListEnableAsync()
+        {
+            return await DB.FrmForms.Where(p => p.Enable == 1).ToListAsync();
+        }
+
+        /// <summary>
+        /// Method that search an entity by its id
+        /// </summary>
+        /// <param name="id">Id entity</param>
         /// <returns>Form</returns>
         public async Task<FrmForms> ByIdAsync(int id)
         {

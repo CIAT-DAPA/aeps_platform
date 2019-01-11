@@ -117,16 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Blocks" xml:space="preserve">
-    <value>Blocks</value>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
   </data>
-  <data name="Forms" xml:space="preserve">
-    <value>Forms</value>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>AEPS</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Editar</value>
   </data>
-  <data name="Questions" xml:space="preserve">
-    <value>Questions</value>
+  <data name="New" xml:space="preserve">
+    <value>Registrar nuevo</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Preguntas</value>
   </data>
 </root>
