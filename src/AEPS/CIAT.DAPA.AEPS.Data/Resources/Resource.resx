@@ -171,6 +171,33 @@
   <data name="FrmFormsUpdated" xml:space="preserve">
     <value>Date updated</value>
   </data>
+  <data name="FrmOptionsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="FrmOptionsEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="FrmOptionsExtId" xml:space="preserve">
+    <value>Extern Id</value>
+  </data>
+  <data name="FrmOptionsId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="FrmOptionsLabel" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="FrmOptionsName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="FrmOptionsQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="FrmOptionsQuestionNavigation" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="FrmOptionsUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
   <data name="FrmQuestionsBlock" xml:space="preserve">
     <value>Block</value>
   </data>

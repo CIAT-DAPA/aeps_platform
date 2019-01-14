@@ -223,6 +223,87 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmOptionsCreated {
+            get {
+                return ResourceManager.GetString("FrmOptionsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string FrmOptionsEnable {
+            get {
+                return ResourceManager.GetString("FrmOptionsEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string FrmOptionsExtId {
+            get {
+                return ResourceManager.GetString("FrmOptionsExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmOptionsId {
+            get {
+                return ResourceManager.GetString("FrmOptionsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label.
+        /// </summary>
+        public static string FrmOptionsLabel {
+            get {
+                return ResourceManager.GetString("FrmOptionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FrmOptionsName {
+            get {
+                return ResourceManager.GetString("FrmOptionsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmOptionsQuestion {
+            get {
+                return ResourceManager.GetString("FrmOptionsQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmOptionsQuestionNavigation {
+            get {
+                return ResourceManager.GetString("FrmOptionsQuestionNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmOptionsUpdated {
+            get {
+                return ResourceManager.GetString("FrmOptionsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Block.
         /// </summary>
         public static string FrmQuestionsBlock {

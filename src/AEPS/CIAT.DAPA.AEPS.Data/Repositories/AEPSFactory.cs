@@ -33,6 +33,8 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
                 return (IAEPSRepository<T>)new RepositoryFrmBlocks(Context);
             else if (typeof(T) == typeof(FrmQuestions))
                 return (IAEPSRepository<T>)new RepositoryFrmQuestions(Context);
+            else if (typeof(T) == typeof(FrmOptions))
+                return (IAEPSRepository<T>)new RepositoryFrmOptions(Context);
             else
                 return null;
         }

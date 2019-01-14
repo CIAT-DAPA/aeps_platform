@@ -9,16 +9,13 @@ using System.Threading.Tasks;
 
 namespace CIAT.DAPA.AEPS.Data.Repositories
 {
-    /// <summary>
-    /// This class allows to access to the information about questions
-    /// </summary>
-    public class RepositoryFrmQuestions : RepositoryBase, IAEPSRepository<FrmQuestions>
+    public class RepositoryFrmOptions : RepositoryBase, IAEPSRepository<FrmOptions>
     {
         /// <summary>
         /// Method Construct
         /// </summary>
         /// <param name="context">Database context</param>
-        public RepositoryFrmQuestions(AEPSContext context) : base(context)
+        public RepositoryFrmOptions(AEPSContext context) : base(context)
         {
 
         }
@@ -27,10 +24,10 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         /// Method that search an entity by its id
         /// </summary>
         /// <param name="id">Id entity</param>
-        /// <returns>Question</returns>
-        public async Task<FrmQuestions> ByIdAsync(int id)
+        /// <returns>Option</returns>
+        public async Task<FrmOptions> ByIdAsync(int id)
         {
-            return await DB.FrmQuestions.SingleOrDefaultAsync(p => p.Id == id);
+            return await DB.FrmOptions.SingleOrDefaultAsync(p => p.Id == id);
         }
 
         /// <summary>
@@ -38,9 +35,9 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         /// </summary>
         /// <param name="entity">Entity to delete</param>
         /// <returns>True if the register has been deleted, otherwise false</returns> 
-        public async Task<bool> DeleteAsync(FrmQuestions entity)
+        public async Task<bool> DeleteAsync(FrmOptions entity)
         {
-            DB.FrmQuestions.Remove(entity);
+            DB.FrmOptions.Remove(entity);
             int records = await DB.SaveChangesAsync();
             return records > 0;
         }
@@ -50,13 +47,13 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         /// </summary>
         /// <param name="entity">Entity to save</param>
         /// <returns>Entity with new Object ID</returns>
-        public async Task<FrmQuestions> InsertAsync(FrmQuestions entity)
+        public async Task<FrmOptions> InsertAsync(FrmOptions entity)
         {
             DateTime now = DateTime.Now;
             entity.Created = now;
             entity.Updated = now;
             entity.Enable = 1;
-            DB.FrmQuestions.Add(entity);
+            DB.FrmOptions.Add(entity);
             await DB.SaveChangesAsync();
             return entity;
         }
@@ -64,19 +61,19 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         /// <summary>
         /// Method that return all forms registered in the database
         /// </summary>
-        /// <returns>List of questions</returns>
-        public async Task<List<FrmQuestions>> ToListAsync()
+        /// <returns>List of options</returns>
+        public async Task<List<FrmOptions>> ToListAsync()
         {
-            return await DB.FrmQuestions.OrderBy(p=>p.Block).ToListAsync();
+            return await DB.FrmOptions.OrderBy(p => p.Question).ToListAsync();
         }
 
         /// <summary>
         /// Method that return all entities enable in the database
         /// </summary>
         /// <returns>List of entities</returns>
-        public async Task<List<FrmQuestions>> ToListEnableAsync()
+        public async Task<List<FrmOptions>> ToListEnableAsync()
         {
-            return await DB.FrmQuestions.Where(p => p.Enable == 1).ToListAsync();
+            return await DB.FrmOptions.Where(p => p.Enable == 1).ToListAsync();
         }
 
         /// <summary>
@@ -84,43 +81,22 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         /// </summary>
         /// <param name="entity">Entity to update</param>
         /// <returns>True if the register has been updated, otherwise false</returns>
-        public async Task<bool> UpdateAsync(FrmQuestions entity)
+        public async Task<bool> UpdateAsync(FrmOptions entity)
         {
-            FrmQuestions model = await DB.FrmQuestions.FindAsync(entity.Id);
+            FrmOptions model = await DB.FrmOptions.FindAsync(entity.Id);
             int records = 0;
             if (model != null)
             {
-                model.Description = entity.Description;
                 model.ExtId = entity.ExtId;
                 model.Name = entity.Name;
                 model.Label = entity.Label;
-                model.Order = entity.Order;
-                model.Type = entity.Type;
-                model.Block = entity.Block;
+                model.Enable = entity.Enable;
+                model.Question = entity.Question;
                 model.Updated = DateTime.Now;
                 DB.Entry(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 records = await DB.SaveChangesAsync();
             }
             return records > 0;
-        }
-
-        /// <summary>
-        /// Method that return a list of questions types 
-        /// </summary>
-        /// <returns>List type</returns>
-        public List<string> ToListType()
-        {
-            return new List<string>() { "string", "int", "double", "bool", "date", "time", "datetime", "unique", "multiple" };
-        }
-
-        /// <summary>
-        /// Method that return all entities in the database, that are enabled, according their types
-        /// </summary>
-        /// <param name="types">List of types</param>
-        /// <returns>List of questions</returns>
-        public async Task<List<FrmQuestions>> ToListEnableTypesAsync(params string[] types)
-        {
-            return await DB.FrmQuestions.Where(p => p.Enable == 1 && types.Contains(p.Type)).ToListAsync();
         }
     }
 }

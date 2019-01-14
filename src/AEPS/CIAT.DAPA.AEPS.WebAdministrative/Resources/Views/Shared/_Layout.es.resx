@@ -126,6 +126,9 @@
   <data name="Home" xml:space="preserve">
     <value>AEPS</value>
   </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
   <data name="Questions" xml:space="preserve">
     <value>Preguntas</value>
   </data>
