@@ -97,6 +97,78 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string FrmBlocksFormsBlock {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string FrmBlocksFormsBlockNavigation {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsBlockNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmBlocksFormsCreated {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string FrmBlocksFormsEnable {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        public static string FrmBlocksFormsForm {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        public static string FrmBlocksFormsFormNavigation {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsFormNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        public static string FrmBlocksFormsOrder {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmBlocksFormsUpdated {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Id.
         /// </summary>
         public static string FrmBlocksId {

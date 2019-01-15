@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CIAT.DAPA.AEPS.Data.Database.FrmBlocksForms>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Title"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="AddBlock">
+            @Html.Hidden("Form", (string)ViewBag.Form.ToString())
+            <div class="form-inline">
+                <label for="Block" class="control-label">@Localizer["Blocks"]:</label>
+                @Html.DropDownList("Block", ViewBag.Block as SelectList, new { @class = "form-control" })
+                <label for="Order" class="control-label">@Localizer["Order"]:</label>
+                @Html.TextBox("Order", "", new { @class = "form-control" })
+                <input type="submit" value="@Localizer["Add"]" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BlockNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BlockNavigation.Description)
+                </td>
+                <td>
+                    <form asp-action="RemoveBlock">
+                            @Html.Hidden("Form", (string)ViewBag.Form.ToString())
+                            @Html.Hidden("Block", (string)item.Block.ToString())
+                            <input type="submit" value="@Localizer["Remove"]" class="btn btn-default" />
+                        
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

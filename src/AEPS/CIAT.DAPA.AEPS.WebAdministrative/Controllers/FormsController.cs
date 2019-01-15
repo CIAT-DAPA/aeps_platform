@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
+using CIAT.DAPA.AEPS.Data.Repositories;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
@@ -58,6 +59,52 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
+            }
+            return View(entity);
+        }
+
+        // GET: Forms/Configure/5
+        public async Task<IActionResult> SetBlocks(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            // Get repositories
+            var rbf = (RepositoryFrmBlocksForms)_context.GetRepository<FrmBlocksForms>();
+            var rb = (RepositoryFrmBlocks)_context.GetRepository<FrmBlocks>();
+            // List blocks by form
+            var blocksInForm = await rbf.ToListByFormAsync(id.Value);
+            // Get all blocks
+            var blocks = await rb.ToListEnableAsync();
+            // Filter blocks, which are not parted of the form
+            var ids = blocksInForm.Select(p => p.Block).Distinct();            
+            ViewData["Block"] = new SelectList(blocks.Where(p => !ids.Contains(p.Id)), "Id", "Description");
+            ViewData["Form"] = id.Value;
+            return View(blocksInForm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddBlock([Bind("Form,Block,Order")] FrmBlocksForms entity)
+        {
+            if (ModelState.IsValid)
+            {
+                await _context.GetRepository<FrmBlocksForms>().InsertAsync(entity);
+                return RedirectToAction(nameof(SetBlocks),new { id = entity.Block});
+            }
+            return View(entity);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveBlock([Bind("Form,Block")] FrmBlocksForms entity)
+        {
+            if (ModelState.IsValid)
+            {
+                await _context.GetRepository<FrmBlocksForms>().DeleteAsync(entity);
+                return RedirectToAction(nameof(SetBlocks), new { id = entity.Block });
             }
             return View(entity);
         }

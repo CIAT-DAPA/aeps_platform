@@ -129,6 +129,30 @@
   <data name="FrmBlocksExtId" xml:space="preserve">
     <value>Extern Id</value>
   </data>
+  <data name="FrmBlocksFormsBlock" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="FrmBlocksFormsBlockNavigation" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="FrmBlocksFormsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="FrmBlocksFormsEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="FrmBlocksFormsForm" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="FrmBlocksFormsFormNavigation" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="FrmBlocksFormsOrder" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="FrmBlocksFormsUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
   <data name="FrmBlocksId" xml:space="preserve">
     <value>Id</value>
   </data>
