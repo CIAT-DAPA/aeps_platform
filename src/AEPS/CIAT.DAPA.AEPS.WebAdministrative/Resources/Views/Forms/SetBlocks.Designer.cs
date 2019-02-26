@@ -97,7 +97,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forms.
+        ///   Looks up a localized string similar to Set blocks in form.
         /// </summary>
         public static string Title {
             get {

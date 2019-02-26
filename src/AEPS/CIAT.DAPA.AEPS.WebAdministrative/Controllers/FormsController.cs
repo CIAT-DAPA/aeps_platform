@@ -74,6 +74,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             // Get repositories
             var rbf = (RepositoryFrmBlocksForms)_context.GetRepository<FrmBlocksForms>();
             var rb = (RepositoryFrmBlocks)_context.GetRepository<FrmBlocks>();
+            var f = (RepositoryFrmForms)_context.GetRepository<FrmForms>();
             // List blocks by form
             var blocksInForm = await rbf.ToListByFormAsync(id.Value);
             // Get all blocks
@@ -81,7 +82,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             // Filter blocks, which are not parted of the form
             var ids = blocksInForm.Select(p => p.Block).Distinct();            
             ViewData["Block"] = new SelectList(blocks.Where(p => !ids.Contains(p.Id)), "Id", "Description");
-            ViewData["Form"] = id.Value;
+            ViewData["Form"] = await f.ByIdAsync(id.Value);
             return View(blocksInForm);
         }
 

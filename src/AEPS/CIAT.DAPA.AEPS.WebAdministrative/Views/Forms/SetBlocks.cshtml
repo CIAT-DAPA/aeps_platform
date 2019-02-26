@@ -8,10 +8,11 @@
 }
 
 <h2>@ViewData["Title"]</h2>
+<h4>@ViewBag.Form.Description.ToString()</h4>
 <div class="row">
     <div class="col-md-12">
         <form asp-action="AddBlock">
-            @Html.Hidden("Form", (string)ViewBag.Form.ToString())
+            @Html.Hidden("Form", (string)ViewBag.Form.Id.ToString())
             <div class="form-inline">
                 <label for="Block" class="control-label">@Localizer["Blocks"]:</label>
                 @Html.DropDownList("Block", ViewBag.Block as SelectList, new { @class = "form-control" })
@@ -40,7 +41,7 @@
                 </td>
                 <td>
                     <form asp-action="RemoveBlock">
-                            @Html.Hidden("Form", (string)ViewBag.Form.ToString())
+                            @Html.Hidden("Form", (string)ViewBag.Form.Id.ToString())
                             @Html.Hidden("Block", (string)item.Block.ToString())
                             <input type="submit" value="@Localizer["Remove"]" class="btn btn-default" />
                         
