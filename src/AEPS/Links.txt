@@ -6,3 +6,4 @@ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspn
 https://github.com/aspnet/Entropy/tree/master/samples/Localization.StarterWeb
 https://docs.microsoft.com/en-us/ef/core/querying/related-data
 https://docs.microsoft.com/en-us/ef/core/querying/related-data#lazy-loading
+https://github.com/stisla/stisla

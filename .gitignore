@@ -249,3 +249,6 @@ ModelManifest.xml
 # Configurations default
 src/AEPS/CIAT.DAPA.AEPS.WebAdministrative/appsettings.Development.json
 *.Development.json
+
+# libraries
+src/AEPS/CIAT.DAPA.AEPS.WebAdministrative/wwwroot/lib/
