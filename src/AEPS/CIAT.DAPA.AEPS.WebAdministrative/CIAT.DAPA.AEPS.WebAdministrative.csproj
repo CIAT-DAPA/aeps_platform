@@ -46,11 +46,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Create.resx</DependentUpon>
     </Compile>
-    <Compile Update="Resources\Views\Forms\Delete.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Delete.resx</DependentUpon>
-    </Compile>
     <Compile Update="Resources\Views\Forms\Details.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -149,10 +144,6 @@
     <EmbeddedResource Update="Resources\Views\Forms\Create.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Create.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Views\Forms\Delete.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Delete.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Forms\Details.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -86,24 +86,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public abstract Task<IActionResult> Edit(int id, [Bind("")] T entity);
-
-        // GET: Controller/Delete/5
-        public async virtual Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var entity = await _context.GetRepository<T>().ByIdAsync(id.Value);
-            if (entity == null)
-            {
-                return NotFound();
-            }
-
-            return View(entity);
-        }
-
+        
         // POST: Controller/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
