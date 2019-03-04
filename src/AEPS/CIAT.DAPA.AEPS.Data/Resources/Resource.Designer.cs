@@ -466,6 +466,69 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string FrmQuestionsRulesApp {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmQuestionsRulesId {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string FrmQuestionsRulesMessage {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmQuestionsRulesQuestion {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmQuestionsRulesQuestionsNavigation {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesQuestionsNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rule.
+        /// </summary>
+        public static string FrmQuestionsRulesRule {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesRule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of rule.
+        /// </summary>
+        public static string FrmQuestionsRulesType {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type of question.
         /// </summary>
         public static string FrmQuestionsType {

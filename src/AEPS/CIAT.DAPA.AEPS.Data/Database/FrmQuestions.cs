@@ -18,6 +18,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
             FarResponsesOptions = new HashSet<FarResponsesOptions>();
             FarResponsesText = new HashSet<FarResponsesText>();
             FrmOptions = new HashSet<FrmOptions>();
+            FrmQuestionsRules = new HashSet<FrmQuestionsRules>();
         }
         [Display(Name = "FrmQuestionsId", ResourceType = typeof(Resource))]
         [Column("id", TypeName = "int(11)")]
@@ -79,5 +80,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public virtual ICollection<FarResponsesText> FarResponsesText { get; set; }
         [InverseProperty("QuestionNavigation")]
         public virtual ICollection<FrmOptions> FrmOptions { get; set; }
+        [InverseProperty("QuestionNavigation")]
+        public virtual ICollection<FrmQuestionsRules> FrmQuestionsRules { get; set; }
     }
 }

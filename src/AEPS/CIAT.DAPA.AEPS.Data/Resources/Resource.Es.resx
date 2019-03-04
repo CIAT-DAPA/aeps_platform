@@ -252,6 +252,27 @@
   <data name="FrmQuestionsOrder" xml:space="preserve">
     <value>Orden</value>
   </data>
+  <data name="FrmQuestionsRulesApp" xml:space="preserve">
+    <value>Aplicación</value>
+  </data>
+  <data name="FrmQuestionsRulesId" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="FrmQuestionsRulesMessage" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="FrmQuestionsRulesQuestion" xml:space="preserve">
+    <value>Pregunta</value>
+  </data>
+  <data name="FrmQuestionsRulesQuestionsNavigation" xml:space="preserve">
+    <value>Pregunta</value>
+  </data>
+  <data name="FrmQuestionsRulesRule" xml:space="preserve">
+    <value>Regla</value>
+  </data>
+  <data name="FrmQuestionsRulesType" xml:space="preserve">
+    <value>Tipo de regla</value>
+  </data>
   <data name="FrmQuestionsType" xml:space="preserve">
     <value>Tipo de pregunta</value>
   </data>

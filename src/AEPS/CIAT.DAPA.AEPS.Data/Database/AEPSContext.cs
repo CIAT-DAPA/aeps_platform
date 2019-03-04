@@ -32,6 +32,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public virtual DbSet<FrmForms> FrmForms { get; set; }
         public virtual DbSet<FrmOptions> FrmOptions { get; set; }
         public virtual DbSet<FrmQuestions> FrmQuestions { get; set; }
+        public virtual DbSet<FrmQuestionsRules> FrmQuestionsRules { get; set; }
         public virtual DbSet<SocAssociations> SocAssociations { get; set; }
         public virtual DbSet<SocPeople> SocPeople { get; set; }
         public virtual DbSet<SocTechnicalAssistants> SocTechnicalAssistants { get; set; }
@@ -365,7 +366,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
                     .HasForeignKey(d => d.Question)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_frm_questions_frm_options");
-            });
+            });            
 
             modelBuilder.Entity<FrmQuestions>(entity =>
             {
@@ -385,6 +386,22 @@ namespace CIAT.DAPA.AEPS.Data.Database
                     .HasForeignKey(d => d.Block)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_frm_blocks_frm_questions");
+            });
+
+            modelBuilder.Entity<FrmQuestionsRules>(entity =>
+            {
+                entity.HasIndex(e => e.Question)
+                    .HasName("fk_frm_questions_frm_questions_rules_idx");
+
+                entity.Property(e => e.Message).IsUnicode(false);
+
+                entity.Property(e => e.Rule).IsUnicode(false);
+
+                entity.HasOne(d => d.QuestionNavigation)
+                    .WithMany(p => p.FrmQuestionsRules)
+                    .HasForeignKey(d => d.Question)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_frm_questions_frm_questions_rules");
             });
 
             modelBuilder.Entity<SocAssociations>(entity =>

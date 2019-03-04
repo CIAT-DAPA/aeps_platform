@@ -10,34 +10,34 @@ using CIAT.DAPA.AEPS.Data.Repositories;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
-    public class OptionsController : ManagementController<FrmOptions>
+    public class RulesController : ManagementController<FrmQuestionsRules>
     {
-        
 
-        public OptionsController(AEPSContext context) : base(context)
+        public RulesController(AEPSContext context) : base(context)
         {
+            
         }
 
-        // GET: Options/Create
+        // GET: Rules/Create
         public async override Task<IActionResult> Create()
         {
-            await CreateSelectListAsync();
+            CreateSelectListAsync();
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async override Task<IActionResult> Create([Bind("Question,Name,Label,ExtId")] FrmOptions entity)
+        public async override Task<IActionResult> Create([Bind("Question,App,Type,Message,Rule")] FrmQuestionsRules entity)
         {
             if (ModelState.IsValid)
             {
-                await _context.GetRepository<FrmOptions>().InsertAsync(entity);
+                await _context.GetRepository<FrmQuestionsRules>().InsertAsync(entity);
                 return RedirectToAction(nameof(Index));
             }
             return View(entity);
         }
 
-        // GET: Options/Edit/5
+        // GET: Rules/Edit/5
         public async override Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -45,18 +45,18 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                 return NotFound();
             }
 
-            var entity = await _context.GetRepository<FrmOptions>().ByIdAsync(id.Value);
+            var entity = await _context.GetRepository<FrmQuestionsRules>().ByIdAsync(id.Value);
             if (entity == null)
             {
                 return NotFound();
             }
-            await CreateSelectListAsync(entity);
+            CreateSelectListAsync(entity);
             return View(entity);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async override Task<IActionResult> Edit(int id, [Bind("Id,Question,Name,Label,ExtId,Enable")] FrmOptions entity)
+        public async override Task<IActionResult> Edit(int id, [Bind("Id,Question,App,Type,Message,Rule")] FrmQuestionsRules entity)
         {
             if (id != entity.Id)
             {
@@ -67,7 +67,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             {
                 try
                 {
-                    await _context.GetRepository<FrmOptions>().UpdateAsync(entity);
+                    await _context.GetRepository<FrmQuestionsRules>().UpdateAsync(entity);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -82,7 +82,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            await CreateSelectListAsync(entity);
+            CreateSelectListAsync(entity);
             return View(entity);
         }
 
@@ -90,10 +90,11 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// Method that creates all select list items
         /// </summary>
         /// <returns></returns>
-        private async Task<bool> CreateSelectListAsync()
+        private bool CreateSelectListAsync()
         {
-            var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
-            ViewData["Question"] = new SelectList((await question.ToListEnableTypesAsync("unique", "multiple")), "Id", "Description");
+            var rules = (RepositoryFrmQuestionsRules)_context.GetRepository<FrmQuestionsRules>();
+            ViewData["App"] = new SelectList(rules.ListApps());
+            ViewData["Type"] = new SelectList(rules.ListTypes());
             return true;
         }
 
@@ -101,12 +102,12 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// Method that creates all select list items
         /// </summary>
         /// <returns></returns>
-        private async Task<bool> CreateSelectListAsync(FrmOptions entity)
+        private bool CreateSelectListAsync(FrmQuestionsRules entity)
         {
-            var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
-            ViewData["Question"] = new SelectList((await question.ToListEnableTypesAsync("unique", "multiple")), "Id", "Description", entity.Question);
+            var rules = (RepositoryFrmQuestionsRules)_context.GetRepository<FrmQuestionsRules>();
+            ViewData["App"] = new SelectList(rules.ListApps(), entity.App);
+            ViewData["Type"] = new SelectList(rules.ListTypes(), entity.Type);
             return true;
         }
-
     }
 }

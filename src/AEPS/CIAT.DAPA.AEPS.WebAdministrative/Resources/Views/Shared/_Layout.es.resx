@@ -132,4 +132,7 @@
   <data name="Questions" xml:space="preserve">
     <value>Preguntas</value>
   </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
 </root>
