@@ -109,5 +109,21 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             }
             return View(entity);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ImportXLSForm()
+        {
+            // Get file
+            var form = HttpContext.Request.Form;
+
+            if (form.Files.Count <= 0)
+                return NotFound();
+
+            var f = form.Files[0];
+            
+            
+            return View();
+        }
     }
 }
