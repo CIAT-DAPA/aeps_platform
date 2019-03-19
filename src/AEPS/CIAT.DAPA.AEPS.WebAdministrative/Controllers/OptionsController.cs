@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
 using CIAT.DAPA.AEPS.Data.Repositories;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
@@ -14,7 +15,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
     {
         
 
-        public OptionsController(AEPSContext context) : base(context)
+        public OptionsController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
         {
         }
 

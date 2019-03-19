@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CIAT.DAPA.AEPS.Data\CIAT.DAPA.AEPS.Data.csproj" />
+    <ProjectReference Include="..\CIAT.DAPA.AEPS.ODK\CIAT.DAPA.AEPS.ODK.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -211,6 +212,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Files\Import\" />
     <Folder Include="wwwroot\css\stisla\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>

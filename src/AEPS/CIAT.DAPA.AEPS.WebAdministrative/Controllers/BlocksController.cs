@@ -6,12 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
     public class BlocksController : ManagementController<FrmBlocks>
     {
-        public BlocksController(AEPSContext context): base(context)
+        public BlocksController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
         {
             
         }

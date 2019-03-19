@@ -14,12 +14,14 @@ namespace CIAT.DAPA.AEPS.ODK.Models
         public string Label { get; set; }
         public string Hint { get; set; }
         public string Required { get; set; }
+        public string RequiredMessage { get; set; }
         public string Default { get; set; }
         public string Constraint { get; set; }
         public string ConstraintMessage { get; set; }
         public string Relevant { get; set; }
         public string ChoiceFilter { get; set; }
         public string Appearance { get; set; }
+        public string Calculation { get; set; }
 
         public Survey()
         {

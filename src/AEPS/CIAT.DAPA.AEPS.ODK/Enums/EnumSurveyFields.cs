@@ -17,6 +17,8 @@ namespace CIAT.DAPA.AEPS.ODK.Enums
         hint,
         [Description("required")]
         required,
+        [Description("required_message")]
+        required_message,
         [Description("default")]
         default_value,
         [Description("constraint")]

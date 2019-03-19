@@ -22,9 +22,12 @@
                 <p class="text-justify">
                     @Localizer["OptionsDescription"]
                 </p>
-                <form asp-action="ImportXLSForm">
-                    <a asp-action="Create" class="btn btn-icon btn-warning"><i class="fas fa-plus-circle"></i> @Localizer["OptionsImportXLS"]</a>
-                </form>
+                @using (Html.BeginForm("ImportXLSForm", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="file" id="file" name="file" class="btn" />
+                    <button type="submit" class="btn btn-icon btn-warning"><i class="fas fa-plus-circle"></i> @Localizer["OptionsImportXLS"]</button>
+                }
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
 using CIAT.DAPA.AEPS.Data.Repositories;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
@@ -17,13 +18,19 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// </summary>
         protected readonly AEPSFactory _context;
 
+        private IHostingEnvironment _hostingEnvironment { get; set; }
+
+        protected string ImportFolder { get; set; }
+
         /// <summary>
         /// Construct method
         /// </summary>
         /// <param name="context">Context of the database</param>
-        public ManagementController(AEPSContext context): base()
+        public ManagementController(AEPSContext context, IHostingEnvironment environment) : base()
         {
             _context = new AEPSFactory(context);
+            _hostingEnvironment = environment;
+            ImportFolder = _hostingEnvironment.ContentRootPath + "/Files/Import/";
         }
 
         // GET: Controller

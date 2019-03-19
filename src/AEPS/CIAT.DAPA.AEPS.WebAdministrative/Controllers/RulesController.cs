@@ -7,13 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
 using CIAT.DAPA.AEPS.Data.Repositories;
+using Microsoft.AspNetCore.Hosting;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
     public class RulesController : ManagementController<FrmQuestionsRules>
     {
 
-        public RulesController(AEPSContext context) : base(context)
+        public RulesController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
         {
             
         }
