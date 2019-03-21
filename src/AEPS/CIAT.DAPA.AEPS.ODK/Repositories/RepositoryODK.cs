@@ -1,8 +1,10 @@
 ﻿using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CIAT.DAPA.AEPS.ODK.Repositories
 {
@@ -26,11 +28,50 @@ namespace CIAT.DAPA.AEPS.ODK.Repositories
         /// Method Construct
         /// </summary>
         /// <param name=package>Excel document</param>
-        public RepositoryODK(ExcelPackage package)
+        public RepositoryODK(ExcelPackage package, string sheet)
         {
-            worksheet = package.Workbook.Worksheets["survey"];
+            worksheet = package.Workbook.Worksheets[sheet];
             Header = new Dictionary<T2, int>();
             Records = new List<T>();
+        }
+
+        /// <summary>
+        /// Method that return the name of fields of each sheet. 
+        /// It takes the description of the enum values
+        /// </summary>
+        /// <returns>List fields</returns>
+        private List<string> GetNamesFields()
+        {
+            List<string> fields = new List<string>();
+            foreach (T2 e in Enum.GetValues(typeof(T2)))
+            {
+                Type type = e.GetType();
+                string name = Enum.GetName(type, e);
+                if (name != null)
+                {
+                    var field = type.GetField(name);
+                    if (field != null)
+                    {
+                        if (Attribute.GetCustomAttribute(field,typeof(DescriptionAttribute)) is DescriptionAttribute attr)
+                        {
+                            fields.Add(attr.Description);
+                        }
+                    }
+                }
+            }
+            return fields;
+        }
+
+        public T2 GetEnum(string name)
+        {
+            var fields = GetNamesFields();
+            foreach (T2 mc in Enum.GetValues(typeof(T2)))
+                if (mc.ToString() == name)
+                    return mc;
+            foreach (T2 mc in Enum.GetValues(typeof(T2)))
+                if (mc.ToString().StartsWith(name))
+                    return mc;
+            return default(T2);
         }
 
         /// <summary>
@@ -40,14 +81,18 @@ namespace CIAT.DAPA.AEPS.ODK.Repositories
         {
             int cols = worksheet.Dimension.Columns;
             string f = string.Empty;
-            List<string> fields = new List<string>(Enum.GetNames(typeof(T2)));
+            List<string> fields = GetNamesFields();
             await Task.Run(() =>
             {
                 for (int i = 1; i <= cols; i++)
                 {
                     f = worksheet.Cells[1, i].Value == null ? string.Empty : worksheet.Cells[1, i].Value.ToString().ToLower().Trim();
-                    if (fields.Contains(f))
-                        Header.Add((T2)Enum.Parse(typeof(T2), f, true), i);
+                    if (fields.Any(p=>p.Contains(f) || p.StartsWith(f)))
+                    {
+                        //Header.Add((T2)Enum.Parse(typeof(T2), f, true), i);
+                        Header.Add(GetEnum(f), i);
+                    }
+                        
                 }
             });
             return true;

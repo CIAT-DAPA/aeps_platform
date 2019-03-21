@@ -119,7 +119,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ImportXLSForm(IFormFile file)
         {
-            
+
             if (file == null)
                 return NotFound();
 
@@ -159,7 +159,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             // Importing data
             import = new ImportXLSForm();
             xlsform = await import.LoadAsync(fileName, "plot");
-                       
+
             // Saving form
             foreach (var s in xlsform.Surveys)
             {
@@ -269,22 +269,20 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                         await rQuestionsRules.InsertAsync(qr);
 
                     // Selection questions
-                    if (types.Length > 1)
+                    if (question.Type.Equals("unique") || question.Type.Equals("multiple"))
                     {
-                        if (question.Type.Equals("unique") || question.Type.Equals("multiple"))
+                        options = new List<FrmOptions>();
+                        foreach (var o in xlsform.Choices.Where(p => p.ListName.Equals(types[1])))
                         {
-                            options = new List<FrmOptions>();
-                            foreach (var o in xlsform.Choices.Where(p => p.ListName.Equals(types[0])))
+                            await rOptions.InsertAsync(new FrmOptions()
                             {
-                                await rOptions.InsertAsync(new FrmOptions()
-                                {
-                                    Question = question.Id,
-                                    Name = o.Name,
-                                    Label = o.Label
-                                });
-                            }
+                                Question = question.Id,
+                                Name = o.Name,
+                                Label = o.Label
+                            });
                         }
                     }
+
                 }
                 order += 1;
             }

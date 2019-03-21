@@ -14,7 +14,7 @@ namespace CIAT.DAPA.AEPS.ODK.Repositories
         /// Method construct
         /// </summary>
         /// <param name="package">Excel document</param>
-        public RepositorySettings(ExcelPackage package) : base(package)
+        public RepositorySettings(ExcelPackage package) : base(package, "settings")
         {
         }
 

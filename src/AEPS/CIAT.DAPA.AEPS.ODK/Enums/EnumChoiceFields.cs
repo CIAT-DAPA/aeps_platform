@@ -12,8 +12,6 @@ namespace CIAT.DAPA.AEPS.ODK.Enums
         [Description("name")]
         name,
         [Description("label")]
-        label,
-        [Description("other")]
-        other
+        label
     }
 }

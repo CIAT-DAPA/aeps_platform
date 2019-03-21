@@ -20,7 +20,7 @@ namespace CIAT.DAPA.AEPS.ODK.Repositories
         /// </summary>
         /// <param name="package">Excel document</param>
         /// <param name="keyNameRow">Key Name Row</param>
-        public RepositorySurvey(ExcelPackage package, string keyNameRow) : base(package)
+        public RepositorySurvey(ExcelPackage package, string keyNameRow) : base(package, "survey")
         {
             KeyNameRow = keyNameRow;
         }
