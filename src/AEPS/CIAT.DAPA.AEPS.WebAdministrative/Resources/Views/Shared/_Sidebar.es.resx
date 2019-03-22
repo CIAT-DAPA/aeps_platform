@@ -117,7 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Home" xml:space="preserve">
+  <data name="Forms" xml:space="preserve">
+    <value>Formularios</value>
+  </data>
+  <data name="FormsBlocks" xml:space="preserve">
+    <value>Bloques</value>
+  </data>
+  <data name="FormsForms" xml:space="preserve">
+    <value>Formularios</value>
+  </data>
+  <data name="FormsHome" xml:space="preserve">
     <value>AEPS</value>
+  </data>
+  <data name="FormsOptions" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
+  <data name="FormsQuestions" xml:space="preserve">
+    <value>Preguntas</value>
+  </data>
+  <data name="FormsRules" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Administración</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ajustes</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Usuarios</value>
   </data>
 </root>

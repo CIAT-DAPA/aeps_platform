@@ -1,1 +1,7 @@
-﻿
+﻿.navbar-bg {
+    background-color: #689F25;
+}
+
+.section .section-title:before {
+    background-color: #689F25;
+}

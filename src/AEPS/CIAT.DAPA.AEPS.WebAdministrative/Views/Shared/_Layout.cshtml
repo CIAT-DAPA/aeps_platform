@@ -45,7 +45,7 @@
                 <ul class="navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="~/css/stisla/assets/img/avatar/avatar-1.png" width="30" class="rounded-circle mr-1">
+                            <img alt="image" src="~/css/stisla/assets/img/avatar/avatar-2.png" width="30" class="rounded-circle mr-1">
                             <div class="d-sm-none d-lg-inline-block">Hi, Steven Sotelo</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -64,44 +64,17 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
-                    </div>
-                    <div class="sidebar-brand sidebar-brand-sm">
-                        <!-- <a href="index.html">St</a> -->
-                        <a asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
-                    </div>
-                    <ul class="sidebar-menu">
-                        <li class="menu-header">Dashboard</li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th"></i><span>Dashboard</span></a>
-                            <ul class="dropdown-menu">
-                                <li class="active"><a asp-area="" asp-controller="Forms" asp-action="Index">@Localizer["Forms"]</a></li>
-                                <li><a asp-area="" asp-controller="Blocks" asp-action="Index">@Localizer["Blocks"]</a></li>
-                                <li><a asp-area="" asp-controller="Questions" asp-action="Index">@Localizer["Questions"]</a></li>
-                                <li><a asp-area="" asp-controller="Options" asp-action="Index">@Localizer["Options"]</a></li>
-                                <li><a asp-area="" asp-controller="Rules" asp-action="Index">@Localizer["Rules"]</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-header">Starter</li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
-                            <ul class="dropdown-menu">
-
-                            </ul>
-                        </li>
-                        <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
-                            <ul class="dropdown-menu"></ul>
-                        </li>
-
-                        <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
-                    </ul>
-                    <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
-                        <a href="documentation.html" class="btn btn-primary btn-lg btn-icon-split btn-block">
-                            <i class="far fa-question-circle"></i> <div>Documentation</div>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img alt="AEPS" src="~/images/logo.png" width="30" class="rounded-circle mr-1">
+                            @Localizer["Home"]
                         </a>
                     </div>
+                    <div class="sidebar-brand sidebar-brand-sm">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img alt="AEPS" src="~/images/logo.png" width="30" class="rounded-circle mr-1">
+                        </a>
+                    </div>
+                    @await Html.PartialAsync("_Sidebar")
                 </aside>
             </div>
 
@@ -113,11 +86,11 @@
                 <section class="section">
                     <div class="section-header">
                         <h1>@ViewData["Title"] </h1>
-                        
+
                         <div class="section-header-breadcrumb">
                             <div class="breadcrumb-item">@ViewData["Action"]</div>
                         </div>
-                        
+
                     </div>
                     <div class="section-body">
                         @RenderBody()

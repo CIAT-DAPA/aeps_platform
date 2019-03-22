@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<ul class="sidebar-menu">
+    <li class="menu-header">@Localizer["Management"]</li>
+
+    <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i><span>@Localizer["Forms"]</span></a>
+        <ul class="dropdown-menu">
+            <li class="active"><a asp-area="" asp-controller="Forms" asp-action="Index">@Localizer["FormsForms"]</a></li>
+            <li><a asp-area="" asp-controller="Blocks" asp-action="Index">@Localizer["FormsBlocks"]</a></li>
+            <li><a asp-area="" asp-controller="Questions" asp-action="Index">@Localizer["FormsQuestions"]</a></li>
+            <li><a asp-area="" asp-controller="Options" asp-action="Index">@Localizer["FormsOptions"]</a></li>
+            <li><a asp-area="" asp-controller="Rules" asp-action="Index">@Localizer["FormsRules"]</a></li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i><span>@Localizer["Users"]</span></a>
+        <ul class="dropdown-menu">
+            <li class="active"><a asp-area="" asp-controller="Forms" asp-action="Index">@Localizer["Users"]</a></li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cogs"></i><span>@Localizer["Settings"]</span></a>
+        <ul class="dropdown-menu">
+            <li class="active"><a asp-area="" asp-controller="Forms" asp-action="Index">@Localizer["Settings"]</a></li>
+        </ul>
+    </li>
+
+
+    <li class="menu-header">@Localizer["Reports"]</li>
+    
+
+</ul>
+
+<div class="p-3 mt-4 mb-4 hide-sidebar-mini">
+    <a href="documentation.html" class="btn btn-primary btn-lg btn-icon-split btn-block">
+        <i class="far fa-question-circle"></i> <div>Documentation</div>
+    </a>
+</div>

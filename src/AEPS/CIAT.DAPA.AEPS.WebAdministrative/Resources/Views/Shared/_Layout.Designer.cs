@@ -61,56 +61,11 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blocks.
-        /// </summary>
-        public static string Blocks {
-            get {
-                return ResourceManager.GetString("Blocks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Forms.
-        /// </summary>
-        public static string Forms {
-            get {
-                return ResourceManager.GetString("Forms", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to AEPS.
         /// </summary>
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Options.
-        /// </summary>
-        public static string Options {
-            get {
-                return ResourceManager.GetString("Options", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Questions.
-        /// </summary>
-        public static string Questions {
-            get {
-                return ResourceManager.GetString("Questions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rules.
-        /// </summary>
-        public static string Rules {
-            get {
-                return ResourceManager.GetString("Rules", resourceCulture);
             }
         }
     }

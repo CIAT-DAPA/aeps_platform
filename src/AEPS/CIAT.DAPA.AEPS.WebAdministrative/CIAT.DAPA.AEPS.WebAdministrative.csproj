@@ -112,6 +112,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>_Layout.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Views\Shared\_Sidebar.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_Sidebar.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -208,6 +213,10 @@
     <EmbeddedResource Update="Resources\Views\Shared\_Layout.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>_Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\_Sidebar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Sidebar.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
