@@ -80,6 +80,38 @@
             </div>
         </div>
     </div>
+
+    <div class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header buttons">
+                <h4>@Localizer["Settings"]</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>@Localizer["SettingsApp"]</th>
+                                <th>@Localizer["SettingsName"]</th>
+                                <th>@Localizer["SettingsValue"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.FrmFormsSettings)
+                            {
+                                <tr>
+                                    <td>@item.App</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Value</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="col-12 col-md-6 col-lg-6">
         <div class="card">
             <div class="card-header buttons">
@@ -101,4 +133,6 @@
             </div>
         </div>
     </div>
+
+
 </div>

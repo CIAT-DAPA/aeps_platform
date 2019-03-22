@@ -277,6 +277,69 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string FrmFormsSettingsApp {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmFormsSettingsCreated {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        public static string FrmFormsSettingsForm {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmFormsSettingsId {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FrmFormsSettingsName {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmFormsSettingsUpdated {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string FrmFormsSettingsValue {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string FrmFormsTitle {

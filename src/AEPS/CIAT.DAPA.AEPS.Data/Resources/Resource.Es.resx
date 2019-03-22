@@ -189,6 +189,27 @@
   <data name="FrmFormsName" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="FrmFormsSettingsApp" xml:space="preserve">
+    <value>Aplicación</value>
+  </data>
+  <data name="FrmFormsSettingsCreated" xml:space="preserve">
+    <value>Fecha creado</value>
+  </data>
+  <data name="FrmFormsSettingsForm" xml:space="preserve">
+    <value>Formulario</value>
+  </data>
+  <data name="FrmFormsSettingsId" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="FrmFormsSettingsName" xml:space="preserve">
+    <value>Nombre de variable</value>
+  </data>
+  <data name="FrmFormsSettingsUpdated" xml:space="preserve">
+    <value>Fecha actualizado</value>
+  </data>
+  <data name="FrmFormsSettingsValue" xml:space="preserve">
+    <value>Valor</value>
+  </data>
   <data name="FrmFormsTitle" xml:space="preserve">
     <value>Título</value>
   </data>

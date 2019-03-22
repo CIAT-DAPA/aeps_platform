@@ -30,6 +30,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public virtual DbSet<FrmBlocks> FrmBlocks { get; set; }
         public virtual DbSet<FrmBlocksForms> FrmBlocksForms { get; set; }
         public virtual DbSet<FrmForms> FrmForms { get; set; }
+        public virtual DbSet<FrmFormsSettings> FrmFormsSettings { get; set; }
         public virtual DbSet<FrmOptions> FrmOptions { get; set; }
         public virtual DbSet<FrmQuestions> FrmQuestions { get; set; }
         public virtual DbSet<FrmQuestionsRules> FrmQuestionsRules { get; set; }
@@ -348,6 +349,22 @@ namespace CIAT.DAPA.AEPS.Data.Database
                 entity.Property(e => e.Name).IsUnicode(false);
 
                 entity.Property(e => e.Title).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<FrmFormsSettings>(entity =>
+            {
+                entity.HasIndex(e => e.Form)
+                    .HasName("fk_frm_forms_frm_forms_settings_idx");
+
+                entity.Property(e => e.Name).IsUnicode(false);
+
+                entity.Property(e => e.Value).IsUnicode(false);
+
+                entity.HasOne(d => d.FormNavigation)
+                    .WithMany(p => p.FrmFormsSettings)
+                    .HasForeignKey(d => d.Form)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_frm_forms_frm_forms_settings");
             });
 
             modelBuilder.Entity<FrmOptions>(entity =>

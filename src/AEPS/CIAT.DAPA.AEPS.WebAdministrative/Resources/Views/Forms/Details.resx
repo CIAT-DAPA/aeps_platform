@@ -138,6 +138,18 @@
   <data name="SetBlocks" xml:space="preserve">
     <value>Set blocks</value>
   </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsApp" xml:space="preserve">
+    <value>App</value>
+  </data>
+  <data name="SettingsName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SettingsValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
   <data name="Subtitle" xml:space="preserve">
     <value>Details</value>
   </data>
