@@ -118,28 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Action" xml:space="preserve">
-    <value>Rules list</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="DeleteConfirmQuestion" xml:space="preserve">
-    <value>Are you sure you want to delete this?</value>
-  </data>
-  <data name="DeleteConfirmTitle" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>In this section you can see all saved questions rules until now</value>
-  </data>
-  <data name="Details" xml:space="preserve">
-    <value>Details</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="New" xml:space="preserve">
-    <value>Create new</value>
+  <data name="Description" xml:space="preserve">
+    <value>You can edit data about rule</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Back to list</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Rules</value>

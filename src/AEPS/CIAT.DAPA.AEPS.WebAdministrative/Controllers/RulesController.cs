@@ -91,11 +91,13 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// Method that creates all select list items
         /// </summary>
         /// <returns></returns>
-        private bool CreateSelectListAsync()
+        private async Task<bool> CreateSelectListAsync()
         {
             var rules = (RepositoryFrmQuestionsRules)_context.GetRepository<FrmQuestionsRules>();
             ViewData["App"] = new SelectList(rules.ListApps());
             ViewData["Type"] = new SelectList(rules.ListTypes());
+            var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
+            ViewData["Question"] = new SelectList((await question.ToListEnableAsync()), "Id", "Label");
             return true;
         }
 
@@ -103,11 +105,13 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// Method that creates all select list items
         /// </summary>
         /// <returns></returns>
-        private bool CreateSelectListAsync(FrmQuestionsRules entity)
+        private async Task<bool> CreateSelectListAsync(FrmQuestionsRules entity)
         {
             var rules = (RepositoryFrmQuestionsRules)_context.GetRepository<FrmQuestionsRules>();
             ViewData["App"] = new SelectList(rules.ListApps(), entity.App);
             ViewData["Type"] = new SelectList(rules.ListTypes(), entity.Type);
+            var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
+            ViewData["Question"] = new SelectList((await question.ToListEnableAsync()), "Id", "Label", entity.Question);
             return true;
         }
     }
