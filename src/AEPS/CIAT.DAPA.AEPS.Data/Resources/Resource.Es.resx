@@ -198,6 +198,9 @@
   <data name="FrmFormsSettingsForm" xml:space="preserve">
     <value>Formulario</value>
   </data>
+  <data name="FrmFormsSettingsFormsNavigation" xml:space="preserve">
+    <value>Configuración de formulario</value>
+  </data>
   <data name="FrmFormsSettingsId" xml:space="preserve">
     <value>Código</value>
   </data>

@@ -198,6 +198,9 @@
   <data name="FrmFormsSettingsForm" xml:space="preserve">
     <value>Form</value>
   </data>
+  <data name="FrmFormsSettingsFormsNavigation" xml:space="preserve">
+    <value>Form settings</value>
+  </data>
   <data name="FrmFormsSettingsId" xml:space="preserve">
     <value>Id</value>
   </data>

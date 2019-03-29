@@ -304,6 +304,15 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Form settings.
+        /// </summary>
+        public static string FrmFormsSettingsFormsNavigation {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsFormsNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Id.
         /// </summary>
         public static string FrmFormsSettingsId {

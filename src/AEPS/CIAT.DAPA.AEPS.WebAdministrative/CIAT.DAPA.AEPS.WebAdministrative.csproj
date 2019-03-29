@@ -22,11 +22,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Create.resx</DependentUpon>
     </Compile>
-    <Compile Update="Resources\Views\Blocks\Delete.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Delete.resx</DependentUpon>
-    </Compile>
     <Compile Update="Resources\Views\Blocks\Details.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -123,10 +118,6 @@
     <EmbeddedResource Update="Resources\Views\Blocks\Create.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Create.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Views\Blocks\Delete.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Delete.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Blocks\Details.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

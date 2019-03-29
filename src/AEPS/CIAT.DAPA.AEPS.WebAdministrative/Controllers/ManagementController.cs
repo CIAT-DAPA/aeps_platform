@@ -57,10 +57,8 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         }
 
         // GET: Controller/Create
-        public async virtual Task<IActionResult> Create()
-        {
-            return View();
-        }
+        public async virtual Task<IActionResult> Create() => View();
+
 
 
         // POST: Controller/Create
@@ -93,7 +91,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public abstract Task<IActionResult> Edit(int id, [Bind("")] T entity);
-        
+
         // POST: Controller/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -109,9 +107,6 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// </summary>
         /// <param name="id">Id of the entity</param>
         /// <returns>True if it exists, otherwise false</returns>
-        protected virtual bool EntityExists(int id)
-        {
-            return _context.GetRepository<T>().ByIdAsync(id) != null;
-        }
+        protected virtual bool EntityExists(int id) => _context.GetRepository<T>().ByIdAsync(id) != null;
     }
 }
