@@ -70,7 +70,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Blocks {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You should fill the following fields to save a new form.
+        ///   Looks up a localized string similar to You should fill the following fields to save a new block.
         /// </summary>
         public static string Description {
             get {

@@ -4,90 +4,84 @@
 
 @{
     ViewData["Title"] = Localizer["Title"];
+    ViewData["Action"] = Localizer["Action"];
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="section-title">@ViewData["Title"]</h2>
+<p class="section-lead">@Localizer["Description"]</p>
 
-<p>
-    <a asp-action="Create">@Localizer["New"]</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BlockNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Label)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Order)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Enable)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ExtId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Created)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Updated)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BlockNavigation.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Label)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Order)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Enable)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExtId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Created)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Updated)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">@Localizer["Edit"]</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">@Localizer["Details"]</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">@Localizer["Delete"]</a>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header buttons">
+                <a asp-action="Create" class="btn btn-icon btn-success"><i class="fas fa-plus-circle"></i> @Localizer["New"]</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BlockNavigation)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Label)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExtId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Updated)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BlockNavigation.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Label)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ExtId)
+                                </td>
+                                <td>
+                                    @item.Updated.ToString("yyyy-MM-dd HH:mm:ss")
+                                </td>
+                                <td class="buttons">
+                                    <form asp-action="Delete" id="frm_delete_@item.Id">
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-icon btn-info" data-toggle="tooltip" data-original-title="@Localizer["Details"]"><i class="fas fa-info"></i></a>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-icon btn-primary" data-toggle="tooltip" data-original-title="@Localizer["Edit"]"><i class="fas fa-edit"></i></a>
+                                        <input type="hidden" data-val="true" data-val-required="The Código field is required." id="Id" name="Id" value="@item.Id">
+                                        <button data-toggle="tooltip" data-original-title="@Localizer["Delete"]" class="btn btn-icon btn-danger"
+                                                data-confirm="@Localizer["DeleteConfirmTitle"]|@Localizer["DeleteConfirmQuestion"] <br/><b>@Html.DisplayFor(modelItem => item.Label)</b>" data-confirm-yes="document.getElementById('frm_delete_@item.Id').submit();">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
