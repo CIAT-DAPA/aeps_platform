@@ -94,7 +94,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         private async Task<bool> CreateSelectListAsync()
         {
             var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
-            ViewData["Question"] = new SelectList((await question.ToListEnableTypesAsync("unique", "multiple")), "Id", "Description");
+            ViewData["Question"] = new SelectList((await question.ToListEnableTypesAsync("unique", "multiple")), "Id", "Label");
             return true;
         }
 
@@ -105,7 +105,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         private async Task<bool> CreateSelectListAsync(FrmOptions entity)
         {
             var question = (RepositoryFrmQuestions)_context.GetRepository<FrmQuestions>();
-            ViewData["Question"] = new SelectList((await question.ToListEnableTypesAsync("unique", "multiple")), "Id", "Description", entity.Question);
+            ViewData["Question"] = new SelectList((await question.ToListEnableTypesAsync("unique", "multiple")), "Id", "Label", entity.Question);
             return true;
         }
 
