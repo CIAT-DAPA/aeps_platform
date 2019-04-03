@@ -117,19 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Greetings" xml:space="preserve">
-    <value>Hi</value>
+  <data name="Action" xml:space="preserve">
+    <value>Iniciar sesión</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Login</value>
+  <data name="Description" xml:space="preserve">
+    <value>Usa una cuenta local para iniciar sesión</value>
   </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Logout</value>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Register</value>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Recordar password</value>
   </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+  <data name="New" xml:space="preserve">
+    <value>Registrarse como nuevo usuario</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Recordarme?</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Cuenta local</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Iniciar sesión</value>
   </data>
 </root>

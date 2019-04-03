@@ -13,24 +13,19 @@
         <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="~/css/stisla/assets/img/avatar/avatar-2.png" width="30" class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">Hi, @UserManager.GetUserName(User)</div>
+                <div class="d-sm-none d-lg-inline-block">@Localizer["Greetings"], @UserManager.GetUserName(User)</div>
                 <!-- <a asp-controller="Account" asp-action="Manage">@UserManager.GetUserName(User)</a> -->
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="features-settings.html" class="dropdown-item has-icon">
-                    <i class="fas fa-cog"></i> Settings
+                    <i class="fas fa-cog"></i> @Localizer["Settings"]
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
-                <!--
-                    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="dropdown-item has-icon text-danger">
-
-                    <i class="fas fa-sign-out-alt"></i> <button type="submit" class="btn btn-link navbar-btn navbar-link">Cerrar sesión</button>
-
+                <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+                    <a href="#" class="dropdown-item has-icon text-danger" onclick="document.getElementById('logoutForm').submit()">
+                        <i class="fas fa-sign-out-alt"></i> @Localizer["Logout"]
+                    </a>
                 </form>
-                    -->
             </div>
         </li>
     }

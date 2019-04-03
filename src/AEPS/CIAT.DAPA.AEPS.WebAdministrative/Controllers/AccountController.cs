@@ -26,11 +26,11 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
 
-        public AccountController(
-            UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
-            IEmailSender emailSender,
-            ILogger<AccountController> logger)
+        [TempData]
+        public string ErrorMessage { get; set; }
+
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, 
+                            IEmailSender emailSender,ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -38,8 +38,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             _logger = logger;
         }
 
-        [TempData]
-        public string ErrorMessage { get; set; }
+        
 
         [HttpGet]
         [AllowAnonymous]
@@ -105,7 +104,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 
             return View(model);
         }
-
+        /*
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -196,7 +195,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                 ModelState.AddModelError(string.Empty, "Invalid recovery code entered.");
                 return View();
             }
-        }
+        }*/
 
         [HttpGet]
         [AllowAnonymous]
@@ -251,6 +250,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
+        /*
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -328,7 +328,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 
             ViewData["ReturnUrl"] = returnUrl;
             return View(nameof(ExternalLogin), model);
-        }
+        }*/
 
         [HttpGet]
         [AllowAnonymous]

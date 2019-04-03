@@ -49,7 +49,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
                 options.UseMySQL(Configuration.GetConnectionString("AEPSDatabase")));
 
             services.AddDbContext<AEPSUsersContext>(options =>
-                options.UseMySQL(Configuration.GetConnectionString("AEPSDatabase")));
+                options.UseMySQL(Configuration.GetConnectionString("AEPSUsersDatabase")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                  .AddEntityFrameworkStores<AEPSUsersContext>()

@@ -2,12 +2,13 @@ https://dev.mysql.com/doc/connector-net/en/connector-net-entityframework-core-sc
 https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/powershell
 https://docs.microsoft.com/en-us/ef/core/providers/
 https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-strings
+
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-2.1
 https://github.com/aspnet/Entropy/tree/master/samples/Localization.StarterWeb
+
 https://docs.microsoft.com/en-us/ef/core/querying/related-data
 https://docs.microsoft.com/en-us/ef/core/querying/related-data#lazy-loading
+
 https://github.com/stisla/stisla
 
-https://www.devart.com/dotconnect/mysql/docs/Identity-3-Tutorial.html
-https://stackoverflow.com/questions/46298605/how-to-use-aspnet-identity-core-in-my-sql-database
-https://retifrav.github.io/blog/2018/03/20/csharp-dotnet-core-identity-mysql/#dotnet21
+https://github.com/jasonsturges/mysql-dotnet-core
