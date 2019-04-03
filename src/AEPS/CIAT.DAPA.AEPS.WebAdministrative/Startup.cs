@@ -5,10 +5,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using CIAT.DAPA.AEPS.Data.Database;
 using CIAT.DAPA.AEPS.Data.Resources;
+using CIAT.DAPA.AEPS.Users.Database;
+using CIAT.DAPA.AEPS.Users.Models;
+using CIAT.DAPA.AEPS.WebAdministrative.Models;
+using CIAT.DAPA.AEPS.WebAdministrative.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -43,6 +48,13 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
             services.AddDbContext<AEPSContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("AEPSDatabase")));
 
+            services.AddDbContext<AEPSUsersContext>(options =>
+                options.UseMySQL(Configuration.GetConnectionString("AEPSDatabase")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                 .AddEntityFrameworkStores<AEPSUsersContext>()
+                 .AddDefaultTokenProviders();
+
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
@@ -72,6 +84,9 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
                 // These are the cultures the app supports for UI strings, i.e. we have localized resources for.
                 options.SupportedUICultures = supportedCultures;
             });
+
+            // Add application services.
+            services.AddTransient<IEmailSender, EmailSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,6 +109,8 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

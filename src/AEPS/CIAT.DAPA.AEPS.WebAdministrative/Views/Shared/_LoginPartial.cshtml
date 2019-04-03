@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.Localization
+@using CIAT.DAPA.AEPS.Users.Models
+
+@inject IViewLocalizer Localizer
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav navbar-right">
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <img alt="image" src="~/css/stisla/assets/img/avatar/avatar-2.png" width="30" class="rounded-circle mr-1">
+                <div class="d-sm-none d-lg-inline-block">Hi, @UserManager.GetUserName(User)</div>
+                <!-- <a asp-controller="Account" asp-action="Manage">@UserManager.GetUserName(User)</a> -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a href="features-settings.html" class="dropdown-item has-icon">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item has-icon text-danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <!--
+                    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="dropdown-item has-icon text-danger">
+
+                    <i class="fas fa-sign-out-alt"></i> <button type="submit" class="btn btn-link navbar-btn navbar-link">Cerrar sesión</button>
+
+                </form>
+                    -->
+            </div>
+        </li>
+    }
+    else
+    {
+        <li class="dropdown">
+            <a asp-area="" class="nav-link nav-link-lg nav-link-user" asp-controller="Account" asp-action="Login">@Localizer["Login"]</a>
+        </li>
+        <li class="dropdown">
+            <a asp-area="" class="nav-link nav-link-lg nav-link-user" asp-controller="Account" asp-action="Register">@Localizer["Register"]</a>
+        </li>
+    }
+
+
+</ul>
