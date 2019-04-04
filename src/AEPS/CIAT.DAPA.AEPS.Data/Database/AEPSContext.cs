@@ -14,12 +14,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
             : base(options)
         {
         }
-
-        public virtual DbSet<Aspnetroles> Aspnetroles { get; set; }
-        public virtual DbSet<Aspnetuserclaims> Aspnetuserclaims { get; set; }
-        public virtual DbSet<Aspnetuserlogins> Aspnetuserlogins { get; set; }
-        public virtual DbSet<Aspnetuserroles> Aspnetuserroles { get; set; }
-        public virtual DbSet<Aspnetusers> Aspnetusers { get; set; }
+        
         public virtual DbSet<ConCountries> ConCountries { get; set; }
         public virtual DbSet<ConMunicipalities> ConMunicipalities { get; set; }
         public virtual DbSet<ConStates> ConStates { get; set; }
@@ -56,84 +51,6 @@ namespace CIAT.DAPA.AEPS.Data.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
-
-            modelBuilder.Entity<Aspnetroles>(entity =>
-            {
-                entity.Property(e => e.Id)
-                    .IsUnicode(false)
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Name).IsUnicode(false);
-            });
-
-            modelBuilder.Entity<Aspnetuserclaims>(entity =>
-            {
-                entity.HasIndex(e => e.Id)
-                    .HasName("Id")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("UserId");
-
-                entity.Property(e => e.UserId).IsUnicode(false);
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Aspnetuserclaims)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("ApplicationUser_Claims");
-            });
-
-            modelBuilder.Entity<Aspnetuserlogins>(entity =>
-            {
-                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey, e.UserId });
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("ApplicationUser_Logins");
-
-                entity.Property(e => e.LoginProvider).IsUnicode(false);
-
-                entity.Property(e => e.ProviderKey).IsUnicode(false);
-
-                entity.Property(e => e.UserId).IsUnicode(false);
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Aspnetuserlogins)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("ApplicationUser_Logins");
-            });
-
-            modelBuilder.Entity<Aspnetuserroles>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.RoleId });
-
-                entity.HasIndex(e => e.RoleId)
-                    .HasName("IdentityRole_Users");
-
-                entity.Property(e => e.UserId).IsUnicode(false);
-
-                entity.Property(e => e.RoleId).IsUnicode(false);
-
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.Aspnetuserroles)
-                    .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("IdentityRole_Users");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Aspnetuserroles)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("ApplicationUser_Roles");
-            });
-
-            modelBuilder.Entity<Aspnetusers>(entity =>
-            {
-                entity.Property(e => e.Id)
-                    .IsUnicode(false)
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.Email).IsUnicode(false);
-
-                entity.Property(e => e.UserName).IsUnicode(false);
-            });
 
             modelBuilder.Entity<ConCountries>(entity =>
             {
