@@ -18,10 +18,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Views\Account\ForgotPassword.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ForgotPassword.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Account\ForgotPasswordConfirmation.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ForgotPasswordConfirmation.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Views\Account\Login.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Account\Register.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Register.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\Views\Blocks\Create.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -146,9 +161,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\Views\Account\ForgotPassword.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgotPassword.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\ForgotPasswordConfirmation.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ForgotPasswordConfirmation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Account\Login.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Account\Register.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Register.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Blocks\Create.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
