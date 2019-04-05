@@ -8,13 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
 using CIAT.DAPA.AEPS.Data.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using CIAT.DAPA.AEPS.Users.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using CIAT.DAPA.AEPS.WebAdministrative.Models;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
     public class RulesController : ManagementController<FrmQuestionsRules>
     {
 
-        public RulesController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
+        public RulesController(AEPSContext context, IHostingEnvironment environment,
+            UserManager<ApplicationUser> userManager, ILogger<FrmQuestionsRules> logger,
+                        IHttpContextAccessor httpContextAccessor) : base(context, environment, userManager, logger, httpContextAccessor)
         {
             
         }
@@ -22,7 +30,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         // GET: Rules/Create
         public async override Task<IActionResult> Create()
         {
-            CreateSelectListAsync();
+            await CreateSelectListAsync();
             return View();
         }
 
@@ -30,61 +38,85 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Create([Bind("Question,App,Type,Message,Rule")] FrmQuestionsRules entity)
         {
-            if (ModelState.IsValid)
+            try
             {
-                await _context.GetRepository<FrmQuestionsRules>().InsertAsync(entity);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    entity = await _context.GetRepository<FrmQuestionsRules>().InsertAsync(entity);
+                    LogInformation(LogginEvent.Create, "Registered a new entity: " + entity.ToString());
+                    return RedirectToAction("Details", new { id = entity.Id });
+                }
+                LogWarnning(LogginEvent.UserError, "Entity is not valid " + entity.ToString());
+                return View(entity);
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         // GET: Rules/Edit/5
         public async override Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
+                if (id == null)
+                {
+                    LogWarnning(LogginEvent.UserError, "Id don't come");
+                    return NotFound();
+                }
+                LogInformation(LogginEvent.Edit, "User is searching id:" + id.Value.ToString());
+                var entity = await _context.GetRepository<FrmQuestionsRules>().ByIdAsync(id.Value);
+                if (entity == null)
+                {
+                    LogWarnning(LogginEvent.UserError, "Entity doesn't exist");
+                    return NotFound();
+                }
+                await CreateSelectListAsync(entity);
+                return View(entity);
             }
-
-            var entity = await _context.GetRepository<FrmQuestionsRules>().ByIdAsync(id.Value);
-            if (entity == null)
+            catch (Exception ex)
             {
-                return NotFound();
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
             }
-            CreateSelectListAsync(entity);
-            return View(entity);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Edit(int id, [Bind("Id,Question,App,Type,Message,Rule")] FrmQuestionsRules entity)
         {
-            if (id != entity.Id)
+            try
             {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                if (id != entity.Id)
                 {
-                    await _context.GetRepository<FrmQuestionsRules>().UpdateAsync(entity);
+                    LogWarnning(LogginEvent.UserError, "Ids are not the same");
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                if (ModelState.IsValid)
                 {
-                    if (!EntityExists(entity.Id))
+                    if (await _context.GetRepository<FrmQuestionsRules>().UpdateAsync(entity))
                     {
-                        return NotFound();
+                        LogInformation(LogginEvent.Edit, "Entity updated: " + entity.ToString());
+                        return RedirectToAction("Details", new { id = entity.Id });
                     }
                     else
                     {
-                        throw;
+                        LogWarnning(LogginEvent.Edit, "Entity wasn't updated " + entity.ToString());
+                        return NotFound();
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                LogWarnning(LogginEvent.UserError, "Entity is not validated " + entity.ToString());
+                await CreateSelectListAsync(entity);
+                return View(entity);
             }
-            CreateSelectListAsync(entity);
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         /// <summary>

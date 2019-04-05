@@ -9,6 +9,7 @@ using CIAT.DAPA.AEPS.Users.Database;
 using CIAT.DAPA.AEPS.Users.Models;
 using CIAT.DAPA.AEPS.WebAdministrative.Models;
 using CIAT.DAPA.AEPS.WebAdministrative.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +21,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MySql.Data.EntityFrameworkCore;
 using MySql.Data.EntityFrameworkCore.Extensions;
@@ -50,7 +52,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
 
             services.AddDbContext<AEPSUsersContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("AEPSUsersDatabase")));
-
+            
             services.AddIdentity<ApplicationUser, IdentityRole>()
                  .AddEntityFrameworkStores<AEPSUsersContext>()
                  .AddDefaultTokenProviders();
@@ -87,6 +89,8 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -98,14 +102,14 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();                
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
-            }            
-                       
+            }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

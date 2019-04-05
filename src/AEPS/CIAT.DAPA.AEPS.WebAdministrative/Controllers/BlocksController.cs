@@ -7,12 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
+using CIAT.DAPA.AEPS.Users.Models;
+using Microsoft.AspNetCore.Http;
+using CIAT.DAPA.AEPS.WebAdministrative.Models;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
     public class BlocksController : ManagementController<FrmBlocks>
     {
-        public BlocksController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
+        public BlocksController(AEPSContext context, IHostingEnvironment environment, 
+            UserManager<ApplicationUser> userManager, ILogger<FrmBlocks> logger,
+                        IHttpContextAccessor httpContextAccessor) : base(context, environment, userManager, logger, httpContextAccessor)
         {
             
         }
@@ -21,43 +29,57 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Create([Bind("Id,Name,Title,Description,Repeat,Times,ExtId")] FrmBlocks entity)
         {
-            if (ModelState.IsValid)
+            try
             {
-                await _context.GetRepository<FrmBlocks>().InsertAsync(entity);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    entity = await _context.GetRepository<FrmBlocks>().InsertAsync(entity);
+                    LogInformation(LogginEvent.Create,"Registered a new entity: " + entity.ToString());
+                    return RedirectToAction("Details",new { id = entity.Id });
+                }
+                LogWarnning(LogginEvent.UserError,"Entity is not valid " + entity.ToString());
+                return View(entity);
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception,"System failed", ex);
+                return View("Error");
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Edit(int id, [Bind("Id,Name,Title,Description,Repeat,Times,Enable,ExtId")] FrmBlocks entity)
         {
-            if (id != entity.Id)
+            try
             {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                if (id != entity.Id)
                 {
-                    await _context.GetRepository<FrmBlocks>().UpdateAsync(entity);
+                    LogWarnning(LogginEvent.UserError,"Ids are not the same");
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                if (ModelState.IsValid)
                 {
-                    if (!EntityExists(entity.Id))
+                    if(await _context.GetRepository<FrmBlocks>().UpdateAsync(entity))
                     {
-                        return NotFound();
+                        LogInformation(LogginEvent.Edit, "Entity updated: " + entity.ToString());
+                        return RedirectToAction("Details", new { id = entity.Id });
                     }
                     else
                     {
-                        throw;
+                        LogWarnning(LogginEvent.Edit, "Entity wasn't updated " + entity.ToString());
+                        return NotFound();
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                LogWarnning(LogginEvent.UserError, "Entity is not validated " + entity.ToString());
+                return View(entity);
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }            
         }
     }
 }

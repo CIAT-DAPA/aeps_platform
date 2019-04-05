@@ -1,0 +1,9 @@
+# Codes for loggin
+
+1- List
+2- Details
+3- Create
+4- Edit
+5- Delete
+6- Exception
+7- User error

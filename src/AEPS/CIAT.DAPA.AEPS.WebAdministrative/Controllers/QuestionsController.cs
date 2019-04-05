@@ -8,62 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
 using CIAT.DAPA.AEPS.Data.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
+using CIAT.DAPA.AEPS.Users.Models;
+using Microsoft.AspNetCore.Http;
+using CIAT.DAPA.AEPS.WebAdministrative.Models;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
     public class QuestionsController : ManagementController<FrmQuestions>
     {
 
-        public QuestionsController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
+        public QuestionsController(AEPSContext context, IHostingEnvironment environment,
+            UserManager<ApplicationUser> userManager, ILogger<FrmQuestions> logger,
+                        IHttpContextAccessor httpContextAccessor) : base(context, environment, userManager, logger, httpContextAccessor)
         {
 
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async override Task<IActionResult> Create([Bind("Id,Block,Name,Label,Description,Type,Order,ExtId")] FrmQuestions entity)
-        {
-            if (ModelState.IsValid)
-            {
-                await _context.GetRepository<FrmQuestions>().InsertAsync(entity);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(entity);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async override Task<IActionResult> Edit(int id, [Bind("Id,Block,Name,Label,Description,Type,Order,Enable,ExtId")] FrmQuestions entity)
-        {
-            if (id != entity.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    await _context.GetRepository<FrmQuestions>().UpdateAsync(entity);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!EntityExists(entity.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            await CreateSelectListAsync(entity);
-            return View(entity);
-        }
-
-        
 
         // GET: Questions/Create
         public async override Task<IActionResult> Create()
@@ -72,21 +34,89 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async override Task<IActionResult> Create([Bind("Id,Block,Name,Label,Description,Type,Order,ExtId")] FrmQuestions entity)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    entity = await _context.GetRepository<FrmQuestions>().InsertAsync(entity);
+                    LogInformation(LogginEvent.Create, "Registered a new entity: " + entity.ToString());
+                    return RedirectToAction("Details", new { id = entity.Id });
+                }
+                LogWarnning(LogginEvent.UserError, "Entity is not valid " + entity.ToString());
+                return View(entity);
+            }
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
+        }
+
         // GET: Questions/Edit/5
         public async override Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
+                if (id == null)
+                {
+                    LogWarnning(LogginEvent.UserError, "Id don't come");
+                    return NotFound();
+                }
+                LogInformation(LogginEvent.Edit, "User is searching id:" + id.Value.ToString());
+                var entity = await _context.GetRepository<FrmQuestions>().ByIdAsync(id.Value);
+                if (entity == null)
+                {
+                    LogWarnning(LogginEvent.UserError, "Entity doesn't exist");
+                    return NotFound();
+                }
+                await CreateSelectListAsync(entity);
+                return View(entity);
             }
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
+        }
 
-            var entity = await _context.GetRepository<FrmQuestions>().ByIdAsync(id.Value);
-            if (entity == null)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async override Task<IActionResult> Edit(int id, [Bind("Id,Block,Name,Label,Description,Type,Order,Enable,ExtId")] FrmQuestions entity)
+        {
+            try
             {
-                return NotFound();
+                if (id != entity.Id)
+                {
+                    LogWarnning(LogginEvent.UserError, "Ids are not the same");
+                    return NotFound();
+                }
+
+                if (ModelState.IsValid)
+                {
+                    if (await _context.GetRepository<FrmQuestions>().UpdateAsync(entity))
+                    {
+                        LogInformation(LogginEvent.Edit, "Entity updated: " + entity.ToString());
+                        return RedirectToAction("Details", new { id = entity.Id });
+                    }
+                    else
+                    {
+                        LogWarnning(LogginEvent.Edit, "Entity wasn't updated " + entity.ToString());
+                        return NotFound();
+                    }
+                }
+                LogWarnning(LogginEvent.UserError, "Entity is not validated " + entity.ToString());
+                await CreateSelectListAsync(entity);
+                return View(entity);
             }
-            await CreateSelectListAsync(entity);
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         /// <summary>

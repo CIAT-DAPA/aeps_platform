@@ -12,3 +12,8 @@ https://docs.microsoft.com/en-us/ef/core/querying/related-data#lazy-loading
 https://github.com/stisla/stisla
 
 https://github.com/jasonsturges/mysql-dotnet-core
+
+https://dotnetcoretutorials.com/2017/01/05/accessing-httpcontext-asp-net-core/
+
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2
+https://jakeydocs.readthedocs.io/en/latest/fundamentals/logging.html

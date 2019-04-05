@@ -8,6 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using CIAT.DAPA.AEPS.Data.Database;
 using CIAT.DAPA.AEPS.Data.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using CIAT.DAPA.AEPS.Users.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using CIAT.DAPA.AEPS.WebAdministrative.Models;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
@@ -15,7 +21,9 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
     {
         
 
-        public OptionsController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
+        public OptionsController(AEPSContext context, IHostingEnvironment environment,
+            UserManager<ApplicationUser> userManager, ILogger<FrmOptions> logger,
+                        IHttpContextAccessor httpContextAccessor) : base(context, environment, userManager, logger, httpContextAccessor)
         {
         }
 
@@ -30,61 +38,85 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Create([Bind("Question,Name,Label,ExtId")] FrmOptions entity)
         {
-            if (ModelState.IsValid)
+            try
             {
-                await _context.GetRepository<FrmOptions>().InsertAsync(entity);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    entity = await _context.GetRepository<FrmOptions>().InsertAsync(entity);
+                    LogInformation(LogginEvent.Create, "Registered a new entity: " + entity.ToString());
+                    return RedirectToAction("Details", new { id = entity.Id });
+                }
+                LogWarnning(LogginEvent.UserError, "Entity is not valid " + entity.ToString());
+                return View(entity);
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         // GET: Options/Edit/5
         public async override Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
+                if (id == null)
+                {
+                    LogWarnning(LogginEvent.UserError, "Id don't come");
+                    return NotFound();
+                }
+                LogInformation(LogginEvent.Edit, "User is searching id:" + id.Value.ToString());
+                var entity = await _context.GetRepository<FrmOptions>().ByIdAsync(id.Value);
+                if (entity == null)
+                {
+                    LogWarnning(LogginEvent.UserError, "Entity doesn't exist");
+                    return NotFound();
+                }
+                await CreateSelectListAsync(entity);
+                return View(entity);
             }
-
-            var entity = await _context.GetRepository<FrmOptions>().ByIdAsync(id.Value);
-            if (entity == null)
+            catch (Exception ex)
             {
-                return NotFound();
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
             }
-            await CreateSelectListAsync(entity);
-            return View(entity);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Edit(int id, [Bind("Id,Question,Name,Label,ExtId,Enable")] FrmOptions entity)
         {
-            if (id != entity.Id)
+            try
             {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                if (id != entity.Id)
                 {
-                    await _context.GetRepository<FrmOptions>().UpdateAsync(entity);
+                    LogWarnning(LogginEvent.UserError, "Ids are not the same");
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                if (ModelState.IsValid)
                 {
-                    if (!EntityExists(entity.Id))
+                    if (await _context.GetRepository<FrmOptions>().UpdateAsync(entity))
                     {
-                        return NotFound();
+                        LogInformation(LogginEvent.Edit, "Entity updated: " + entity.ToString());
+                        return RedirectToAction("Details", new { id = entity.Id });
                     }
                     else
                     {
-                        throw;
+                        LogWarnning(LogginEvent.Edit, "Entity wasn't updated " + entity.ToString());
+                        return NotFound();
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                LogWarnning(LogginEvent.UserError, "Entity is not validated " + entity.ToString());
+                await CreateSelectListAsync(entity);
+                return View(entity);
             }
-            await CreateSelectListAsync(entity);
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }            
         }
 
         /// <summary>

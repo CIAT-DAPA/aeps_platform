@@ -13,6 +13,11 @@ using CIAT.DAPA.AEPS.ODK;
 using Microsoft.AspNetCore.Http;
 using CIAT.DAPA.AEPS.ODK.Models;
 using CIAT.DAPA.AEPS.ODK.Enums;
+using Microsoft.AspNetCore.Authorization;
+using CIAT.DAPA.AEPS.Users.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using CIAT.DAPA.AEPS.WebAdministrative.Models;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
@@ -22,7 +27,9 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// Method Construct
         /// </summary>
         /// <param name="context"></param>
-        public FormsController(AEPSContext context, IHostingEnvironment environment) : base(context, environment)
+        public FormsController(AEPSContext context, IHostingEnvironment environment,
+            UserManager<ApplicationUser> userManager, ILogger<FrmForms> logger,
+                        IHttpContextAccessor httpContextAccessor) : base(context, environment, userManager, logger, httpContextAccessor)
         {
         }
 
@@ -30,90 +37,137 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Create([Bind("Id,Name,Title,Description,Repeat,Times,ExtId")] FrmForms entity)
         {
-            if (ModelState.IsValid)
+            try
             {
-                await _context.GetRepository<FrmForms>().InsertAsync(entity);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    entity = await _context.GetRepository<FrmForms>().InsertAsync(entity);
+                    LogInformation(LogginEvent.Create, "Registered a new entity: " + entity.ToString());
+                    return RedirectToAction("Details", new { id = entity.Id });
+                }
+                LogWarnning(LogginEvent.UserError, "Entity is not valid " + entity.ToString());
+                return View(entity);
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async override Task<IActionResult> Edit(int id, [Bind("Id,Name,Title,Description,Repeat,Times,Enable,ExtId")] FrmForms entity)
         {
-            if (id != entity.Id)
+            try
             {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                if (id != entity.Id)
                 {
-                    await _context.GetRepository<FrmForms>().UpdateAsync(entity);
+                    LogWarnning(LogginEvent.UserError, "Ids are not the same");
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                if (ModelState.IsValid)
                 {
-                    if (!EntityExists(entity.Id))
+                    if (await _context.GetRepository<FrmForms>().UpdateAsync(entity))
                     {
-                        return NotFound();
+                        LogInformation(LogginEvent.Edit, "Entity updated: " + entity.ToString());
+                        return RedirectToAction("Details", new { id = entity.Id });
                     }
                     else
                     {
-                        throw;
+                        LogWarnning(LogginEvent.Edit, "Entity wasn't updated " + entity.ToString());
+                        return NotFound();
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                LogWarnning(LogginEvent.UserError, "Entity is not validated " + entity.ToString());
+                return View(entity);
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         // GET: Forms/Configure/5
         public async Task<IActionResult> SetBlocks(int? id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    LogWarnning(LogginEvent.UserError, "Id don't come");
+                    return NotFound();
+                }
 
-            // Get repositories
-            var rbf = (RepositoryFrmBlocksForms)_context.GetRepository<FrmBlocksForms>();
-            var rb = (RepositoryFrmBlocks)_context.GetRepository<FrmBlocks>();
-            var f = (RepositoryFrmForms)_context.GetRepository<FrmForms>();
-            // List blocks by form
-            var blocksInForm = await rbf.ToListByFormAsync(id.Value);
-            // Get all blocks
-            var blocks = await rb.ToListEnableAsync();
-            // Filter blocks, which are not parted of the form
-            var ids = blocksInForm.Select(p => p.Block).Distinct();
-            ViewData["Block"] = new SelectList(blocks.Where(p => !ids.Contains(p.Id)), "Id", "Description");
-            ViewData["Form"] = await f.ByIdAsync(id.Value);
-            return View(blocksInForm);
+                // Get repositories
+                var rbf = (RepositoryFrmBlocksForms)_context.GetRepository<FrmBlocksForms>();
+                var rb = (RepositoryFrmBlocks)_context.GetRepository<FrmBlocks>();
+                var f = (RepositoryFrmForms)_context.GetRepository<FrmForms>();
+                // List blocks by form
+                var blocksInForm = await rbf.ToListByFormAsync(id.Value);
+                // Get all blocks
+                var blocks = await rb.ToListEnableAsync();
+                // Filter blocks, which are not parted of the form
+                var ids = blocksInForm.Select(p => p.Block).Distinct();
+                ViewData["Block"] = new SelectList(blocks.Where(p => !ids.Contains(p.Id)), "Id", "Description");
+                ViewData["Form"] = await f.ByIdAsync(id.Value);
+
+                LogInformation(LogginEvent.List, "Trying to set blocks to the form: " + id.Value.ToString());
+                return View(blocksInForm);
+            }
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddBlock([Bind("Form,Block,Order")] FrmBlocksForms entity)
         {
-            if (ModelState.IsValid)
+            try
             {
-                await _context.GetRepository<FrmBlocksForms>().InsertAsync(entity);
-                return RedirectToAction(nameof(SetBlocks), new { id = entity.Block });
+                if (ModelState.IsValid)
+                {
+                    entity = await _context.GetRepository<FrmBlocksForms>().InsertAsync(entity);
+                    LogInformation(LogginEvent.Create, "Registered a new entity: " + entity.ToString());
+                    return RedirectToAction("SetBlocks", new { id = entity.Form });
+                }
+                LogWarnning(LogginEvent.UserError, "Entity is not valid " + entity.ToString());
+                return RedirectToAction("SetBlocks", new { id = entity.Form });
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RemoveBlock([Bind("Form,Block")] FrmBlocksForms entity)
         {
-            if (ModelState.IsValid)
+            try
             {
-                await _context.GetRepository<FrmBlocksForms>().DeleteAsync(entity);
-                return RedirectToAction(nameof(SetBlocks), new { id = entity.Block });
+                if (ModelState.IsValid)
+                {
+                    if (await _context.GetRepository<FrmBlocksForms>().DeleteAsync(entity))
+                        LogInformation(LogginEvent.Delete, "User deleted the entity: " + entity.ToString());
+                    else
+                        LogWarnning(LogginEvent.Delete, "Entity wasn't deleted " + entity.ToString());
+                    return RedirectToAction("SetBlocks", new { id = entity.Form });
+                }
+                LogWarnning(LogginEvent.UserError, "Entity is not valid " + entity.ToString());
+                return RedirectToAction("SetBlocks", new { id = entity.Form });
             }
-            return View(entity);
+            catch (Exception ex)
+            {
+                LogCritical(LogginEvent.Exception, "System failed", ex);
+                return View("Error");
+            }
         }
 
         [HttpPost]
@@ -176,7 +230,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             await rForms.InsertAsync(form);
 
             // Settings form
-            formSettings = GetSettings(xlsform.Settings, form);            
+            formSettings = GetSettings(xlsform.Settings, form);
             foreach (var fs in formSettings)
                 await rFormsSettings.InsertAsync(fs);
 
@@ -256,10 +310,11 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             List<FrmFormsSettings> settings = new List<FrmFormsSettings>();
             if (!string.IsNullOrEmpty(odk.InstanceName))
             {
-                settings.Add(new FrmFormsSettings() {
+                settings.Add(new FrmFormsSettings()
+                {
                     App = "odk",
                     Form = form.Id,
-                    Name = Enum.GetName(typeof(EnumSettingsFields),EnumSettingsFields.instance_name),
+                    Name = Enum.GetName(typeof(EnumSettingsFields), EnumSettingsFields.instance_name),
                     Value = odk.InstanceName
                 });
             }
@@ -334,7 +389,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         private List<FrmQuestionsRules> GetQuestionRules(Survey s, FrmQuestions question)
         {
             List<FrmQuestionsRules> questionRules = new List<FrmQuestionsRules>();
-            
+
             if (s.Required.Equals("yes"))
                 questionRules.Add(new FrmQuestionsRules()
                 {
