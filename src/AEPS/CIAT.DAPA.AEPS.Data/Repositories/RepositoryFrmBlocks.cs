@@ -101,5 +101,20 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         {
             return await DB.FrmBlocks.SingleOrDefaultAsync(p => p.Id == id);
         }
+
+        /// <summary>
+        /// Method that add new entity to the database
+        /// </summary>
+        /// <param name="entity">Entity to save</param>
+        /// <returns>Entity with new Object ID</returns>
+        public FrmBlocks AddAsync(FrmBlocks entity)
+        {
+            DateTime now = DateTime.Now;
+            entity.Created = now;
+            entity.Updated = now;
+            entity.Enable = 1;
+            DB.FrmBlocks.Add(entity);
+            return entity;
+        }
     }
 }

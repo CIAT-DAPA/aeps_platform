@@ -22,14 +22,14 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Index {
+    public class XLSFormSummary {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Index() {
+        internal XLSFormSummary() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms.Index", typeof(Index).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms.XLSFormSummary", typeof(XLSFormSummary).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Form list.
+        ///   Looks up a localized string similar to Import result.
         /// </summary>
         public static string Action {
             get {
@@ -70,34 +70,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
-        /// </summary>
-        public static string Delete {
-            get {
-                return ResourceManager.GetString("Delete", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure you want to delete this?.
-        /// </summary>
-        public static string DeleteConfirmQuestion {
-            get {
-                return ResourceManager.GetString("DeleteConfirmQuestion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Delete.
-        /// </summary>
-        public static string DeleteConfirmTitle {
-            get {
-                return ResourceManager.GetString("DeleteConfirmTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to In this section you can see all saved forms until now.
+        ///   Looks up a localized string similar to This is the result of the import process.
         /// </summary>
         public static string Description {
             get {
@@ -106,83 +79,38 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Details.
+        ///   Looks up a localized string similar to Failed.
         /// </summary>
-        public static string Details {
+        public static string MessageFailed {
             get {
-                return ResourceManager.GetString("Details", resourceCulture);
+                return ResourceManager.GetString("MessageFailed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to Succesful.
         /// </summary>
-        public static string Edit {
+        public static string MessageSuccesful {
             get {
-                return ResourceManager.GetString("Edit", resourceCulture);
+                return ResourceManager.GetString("MessageSuccesful", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create new.
+        ///   Looks up a localized string similar to XLS Form.
         /// </summary>
-        public static string New {
+        public static string Subtitle {
             get {
-                return ResourceManager.GetString("New", resourceCulture);
+                return ResourceManager.GetString("Subtitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Options.
-        /// </summary>
-        public static string Options {
-            get {
-                return ResourceManager.GetString("Options", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You can import a survey in XLSForm format. It will record blocks, questions, options and rules.
-        /// </summary>
-        public static string OptionsDescription {
-            get {
-                return ResourceManager.GetString("OptionsDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Import XLS Form.
-        /// </summary>
-        public static string OptionsImportXLS {
-            get {
-                return ResourceManager.GetString("OptionsImportXLS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Set blocks.
-        /// </summary>
-        public static string SetBlocks {
-            get {
-                return ResourceManager.GetString("SetBlocks", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Forms.
+        ///   Looks up a localized string similar to Form.
         /// </summary>
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name of var to start loading questions.
-        /// </summary>
-        public static string XLSFormVar {
-            get {
-                return ResourceManager.GetString("XLSFormVar", resourceCulture);
             }
         }
     }

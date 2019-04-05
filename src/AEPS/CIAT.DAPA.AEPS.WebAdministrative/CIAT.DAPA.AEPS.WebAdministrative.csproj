@@ -99,6 +99,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>SetBlocks.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Views\Forms\XLSFormSummary.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>XLSFormSummary.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Views\Options\Create.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -258,6 +263,10 @@
     <EmbeddedResource Update="Resources\Views\Forms\SetBlocks.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SetBlocks.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Forms\XLSFormSummary.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>XLSFormSummary.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Options\Create.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

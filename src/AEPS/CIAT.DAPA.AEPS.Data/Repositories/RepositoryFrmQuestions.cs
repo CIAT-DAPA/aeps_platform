@@ -122,5 +122,20 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         {
             return await DB.FrmQuestions.Where(p => p.Enable == 1 && types.Contains(p.Type)).ToListAsync();
         }
+
+        /// <summary>
+        /// Method that add new entity
+        /// </summary>
+        /// <param name="entity">Entity to save</param>
+        /// <returns>Entity with new Object ID</returns>
+        public FrmQuestions AddAsync(FrmQuestions entity)
+        {
+            DateTime now = DateTime.Now;
+            entity.Created = now;
+            entity.Updated = now;
+            entity.Enable = 1;
+            DB.FrmQuestions.Add(entity);
+            return entity;
+        }
     }
 }

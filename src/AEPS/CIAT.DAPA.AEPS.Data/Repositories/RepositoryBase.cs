@@ -1,4 +1,5 @@
 ﻿using CIAT.DAPA.AEPS.Data.Database;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,15 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         public RepositoryBase(AEPSContext context)
         {
             DB = context;
+        }
+
+        /// <summary>
+        /// Method that start a transaction
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IDbContextTransaction> BeginTransactionAsync()
+        {
+            return await DB.Database.BeginTransactionAsync();
         }
     }
 }

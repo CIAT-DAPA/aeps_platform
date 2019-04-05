@@ -98,5 +98,20 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
             }
             return records > 0;
         }
+
+        /// <summary>
+        /// Method that add new entity
+        /// </summary>
+        /// <param name="entity">Entity to save</param>
+        /// <returns>Entity with new Object ID</returns>
+        public FrmOptions AddAsync(FrmOptions entity)
+        {
+            DateTime now = DateTime.Now;
+            entity.Created = now;
+            entity.Updated = now;
+            entity.Enable = 1;
+            DB.FrmOptions.Add(entity);
+            return entity;
+        }
     }
 }

@@ -18,6 +18,8 @@ using CIAT.DAPA.AEPS.Users.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using CIAT.DAPA.AEPS.WebAdministrative.Models;
+using Microsoft.EntityFrameworkCore.Storage;
+using CIAT.DAPA.AEPS.WebAdministrative.Models.FormsViewModels;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
@@ -172,17 +174,22 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ImportXLSForm(IFormFile file)
+        public async Task<IActionResult> ImportXLSForm(IFormFile file, string xlsformvar)
         {
 
-            if (file == null)
+            if (file == null || string.IsNullOrEmpty(xlsformvar))
+            {
+                LogWarnning(LogginEvent.UserError, "Parameters don't come");
                 return NotFound();
+            }
+                
 
             //Declaring variables
+            XLSFormSummaryViewModel e;
+
             ImportXLSForm import;
             Stream stream;
             XLSForm xlsform;
-
 
             RepositoryFrmBlocksForms rBlocksForms = (RepositoryFrmBlocksForms)_context.GetRepository<FrmBlocksForms>();
             RepositoryFrmBlocks rBlocks = (RepositoryFrmBlocks)_context.GetRepository<FrmBlocks>();
@@ -202,109 +209,148 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             string[] types;
             int order = 1;
 
-            // Create a file
-            var f = file;
-            string fileName = string.Empty;
-            do
-            {
-                fileName = ImportFolder + DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + f.FileName;
-            } while (System.IO.File.Exists(fileName));
-            using (stream = new FileStream(fileName, FileMode.Create))
-            {
-                await f.CopyToAsync(stream);
-                stream.Close();
+            try
+            {                
+                // Create a file
+                var f = file;
+                string fileName = string.Empty;
+                do
+                {
+                    fileName = ImportFolder + DateTime.Now.ToString("yyyyMMddHHmmss") + "-" + f.FileName;
+                    LogInformation(LogginEvent.Import, "Loading file: " + fileName);
+                } while (System.IO.File.Exists(fileName));
+                using (stream = new FileStream(fileName, FileMode.Create))
+                {
+                    await f.CopyToAsync(stream);
+                    stream.Close();
+                }
+
+                LogInformation(LogginEvent.Import, "Loading XLSForm with variable: " + xlsformvar);
+                // Importing data
+                import = new ImportXLSForm();
+                xlsform = await import.LoadAsync(fileName, xlsformvar);
             }
-
-            // Importing data
-            import = new ImportXLSForm();
-            xlsform = await import.LoadAsync(fileName, "plot");
-
-            // Saving form
-            form = new FrmForms()
+            catch(Exception ex)
             {
-                Name = xlsform.Settings.FormId,
-                Title = xlsform.Settings.FormTitle,
-                Description = xlsform.Settings.FormTitle,
-                ExtId = xlsform.Settings.FormId
-            };
-            await rForms.InsertAsync(form);
+                LogCritical(LogginEvent.Exception, "System failed loading file", ex);
+                e = new XLSFormSummaryViewModel() { Succesful = false, Message = ex.Message };
+                return View("XLSFormSummary",e);
+            }
+            
 
-            // Settings form
-            formSettings = GetSettings(xlsform.Settings, form);
-            foreach (var fs in formSettings)
-                await rFormsSettings.InsertAsync(fs);
-
-            // Saving blocks and questions
-            foreach (var s in xlsform.Surveys)
+            using (IDbContextTransaction transaction = await rForms.BeginTransactionAsync())
             {
-                // Start a group, it could be a group or repeat
-                if (s.Type.Equals("begin group") || s.Type.Equals("begin repeat"))
+                try
                 {
-                    block = new FrmBlocks()
+                    LogInformation(LogginEvent.Import, "Starting transaction for XLSForm import");
+                    // Saving form
+                    form = new FrmForms()
                     {
-                        Name = s.Name,
-                        Title = s.Label,
-                        Description = s.Label,
-                        Repeat = (byte)(s.Type.Equals("begin repeat") ? 1 : 0),
-
+                        Name = xlsform.Settings.FormId,
+                        Title = xlsform.Settings.FormTitle,
+                        Description = xlsform.Settings.FormTitle,
+                        ExtId = xlsform.Settings.FormId
                     };
-                    block = await rBlocks.InsertAsync(block);
-                    blockForm = new FrmBlocksForms()
+                    await rForms.InsertAsync(form);
+
+                    // Settings form
+                    formSettings = GetSettings(xlsform.Settings, form);
+                    foreach (var fs in formSettings)
+                        await rFormsSettings.InsertAsync(fs);
+
+                    // Saving blocks and questions
+                    foreach (var s in xlsform.Surveys)
                     {
-                        Block = block.Id,
-                        Form = form.Id,
-                        Order = order
-                    };
-                    await rBlocksForms.InsertAsync(blockForm);
-                }
-                // End the group
-                else if (s.Type.StartsWith("end"))
-                {
-                    block = null;
-                }
-                // Questions
-                else
-                {
-                    types = s.Type.Split(" ");
-
-                    question = new FrmQuestions()
-                    {
-                        Block = block.Id,
-                        Name = s.Name,
-                        Label = s.Label,
-                        Description = s.Hint,
-                        Type = GetTypeODK(types[0]),
-                        Order = order
-                    };
-
-                    question = await rQuestions.InsertAsync(question);
-
-                    // Question Rules
-                    questionRules = GetQuestionRules(s, question);
-                    foreach (var qr in questionRules)
-                        await rQuestionsRules.InsertAsync(qr);
-
-                    // Selection questions
-                    if (question.Type.Equals("unique") || question.Type.Equals("multiple"))
-                    {
-                        options = new List<FrmOptions>();
-                        foreach (var o in xlsform.Choices.Where(p => p.ListName.Equals(types[1])))
+                        // Start a group, it could be a group or repeat
+                        if (s.Type.Equals("begin group") || s.Type.Equals("begin repeat"))
                         {
-                            await rOptions.InsertAsync(new FrmOptions()
+                            block = new FrmBlocks()
                             {
-                                Question = question.Id,
-                                Name = o.Name,
-                                Label = o.Label
-                            });
+                                Name = s.Name,
+                                Title = s.Label,
+                                Description = s.Label,
+                                Repeat = (byte)(s.Type.Equals("begin repeat") ? 1 : 0),
+
+                            };
+                            block = await rBlocks.InsertAsync(block);
+                            blockForm = new FrmBlocksForms()
+                            {
+                                Block = block.Id,
+                                Form = form.Id,
+                                Order = order
+                            };
+                            await rBlocksForms.InsertAsync(blockForm);
                         }
+                        // End the group
+                        else if (s.Type.StartsWith("end"))
+                        {
+                            block = null;
+                        }
+                        // Questions
+                        else
+                        {
+                            types = s.Type.Split(" ");
+
+                            question = new FrmQuestions()
+                            {
+                                Block = block.Id,
+                                Name = s.Name,
+                                Label = s.Label,
+                                Description = s.Hint,
+                                Type = GetTypeODK(types[0]),
+                                Order = order
+                            };
+
+                            question = await rQuestions.InsertAsync(question);
+
+                            // Question Rules
+                            questionRules = GetQuestionRules(s, question);
+                            foreach (var qr in questionRules)
+                                await rQuestionsRules.InsertAsync(qr);
+
+                            // Selection questions
+                            if (question.Type.Equals("unique") || question.Type.Equals("multiple"))
+                            {
+                                options = new List<FrmOptions>();
+                                foreach (var o in xlsform.Choices.Where(p => p.ListName.Equals(types[1])))
+                                {
+                                    await rOptions.InsertAsync(new FrmOptions()
+                                    {
+                                        Question = question.Id,
+                                        Name = o.Name,
+                                        Label = o.Label
+                                    });
+                                }
+                            }
+
+                        }
+                        order += 1;
                     }
 
+                    transaction.Commit();
+
+                    LogInformation(LogginEvent.Import, "Finished transaction for XLSForm import");
+
+                    e = new XLSFormSummaryViewModel() { Succesful = true, Message = string.Empty };
+                    return View("XLSFormSummary", e);
                 }
-                order += 1;
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    LogCritical(LogginEvent.Exception, "System saving into database", ex);
+
+                    e = new XLSFormSummaryViewModel() { Succesful = false, Message = ex.Message };
+                    return View("XLSFormSummary", e);
+                }
             }
-            return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="odk"></param>
+        /// <param name="form"></param>
+        /// <returns></returns>
         private List<FrmFormsSettings> GetSettings(Settings odk, FrmForms form)
         {
             List<FrmFormsSettings> settings = new List<FrmFormsSettings>();

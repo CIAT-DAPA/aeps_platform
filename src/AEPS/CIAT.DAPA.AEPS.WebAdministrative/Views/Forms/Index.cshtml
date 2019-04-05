@@ -25,8 +25,18 @@
                 @using (Html.BeginForm("ImportXLSForm", "Forms", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
-                    <input type="file" id="file" name="file" class="btn" />
-                    <button type="submit" class="btn btn-icon btn-warning"><i class="fas fa-plus-circle"></i> @Localizer["OptionsImportXLS"]</button>
+                    <div class="form-group row">
+                        <label for="xlsformvar" class="col-sm-3 col-form-label">@Localizer["XLSFormVar"]</label>
+                        <div class="col-sm-3">
+                            <input type="text" id="xlsformvar" name="xlsformvar" class="form-control" value="plot" />
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="file" id="file" name="file" class="btn" />
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="submit" class="btn btn-icon btn-warning"><i class="fas fa-plus-circle"></i> @Localizer["OptionsImportXLS"]</button>
+                        </div>
+                    </div>
                 }
             </div>
         </div>

@@ -111,5 +111,16 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
         {
             return new List<string>() { "required", "constraint", "relevant", "appearance", "calculation", "choice_filter" };
         }
+
+        /// <summary>
+        /// Method that add new entity to the database
+        /// </summary>
+        /// <param name="entity">Entity to save</param>
+        /// <returns>Entity with new Object ID</returns>
+        public FrmQuestionsRules AddAsync(FrmQuestionsRules entity)
+        {
+            DB.FrmQuestionsRules.Add(entity);
+            return entity;
+        }
     }
 }

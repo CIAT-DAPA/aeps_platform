@@ -13,6 +13,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Models
         Edit = 1004,
         Delete = 1005,
         Exception = 1006,
-        UserError = 1007
+        UserError = 1007,
+        Import = 1008
     }
 }
