@@ -133,6 +133,15 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Blocks {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search....
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blocks.
         /// </summary>
         public static string Title {

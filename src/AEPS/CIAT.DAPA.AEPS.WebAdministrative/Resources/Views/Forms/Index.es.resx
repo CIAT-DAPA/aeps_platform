@@ -150,6 +150,9 @@
   <data name="OptionsImportXLS" xml:space="preserve">
     <value>Importar XLS Form</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Buscar...</value>
+  </data>
   <data name="SetBlocks" xml:space="preserve">
     <value>Asignar bloques</value>
   </data>
