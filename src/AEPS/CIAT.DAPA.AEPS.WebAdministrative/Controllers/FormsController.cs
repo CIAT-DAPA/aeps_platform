@@ -329,7 +329,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 
                     transaction.Commit();
 
-                    LogInformation(LogginEvent.Import, "Finished transaction for XLSForm import");
+                    LogInformation(LogginEvent.Import, "Finished transaction for XLSForm import. Form id:" + form.Id.ToString());
 
                     e = new XLSFormSummaryViewModel() { Succesful = true, Message = string.Empty };
                     return View("XLSFormSummary", e);
