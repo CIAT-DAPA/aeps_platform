@@ -124,11 +124,74 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Geography.
+        /// </summary>
+        public static string Geography {
+            get {
+                return ResourceManager.GetString("Geography", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administration level 1.
+        /// </summary>
+        public static string GeographyAdm1 {
+            get {
+                return ResourceManager.GetString("GeographyAdm1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administration level 2.
+        /// </summary>
+        public static string GeographyAdm2 {
+            get {
+                return ResourceManager.GetString("GeographyAdm2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Countries.
+        /// </summary>
+        public static string GeographyCountries {
+            get {
+                return ResourceManager.GetString("GeographyCountries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Management.
         /// </summary>
         public static string Management {
             get {
                 return ResourceManager.GetString("Management", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setup.
+        /// </summary>
+        public static string Organization {
+            get {
+                return ResourceManager.GetString("Organization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Associations.
+        /// </summary>
+        public static string OrganizationAssociations {
+            get {
+                return ResourceManager.GetString("OrganizationAssociations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People.
+        /// </summary>
+        public static string OrganizationPeople {
+            get {
+                return ResourceManager.GetString("OrganizationPeople", resourceCulture);
             }
         }
         

@@ -5,7 +5,7 @@
     <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-alt"></i><span>@Localizer["Forms"]</span></a>
         <ul class="dropdown-menu">
-            <li class="active"><a asp-area="" asp-controller="Forms" asp-action="Index">@Localizer["FormsForms"]</a></li>
+            <li><a asp-area="" asp-controller="Forms" asp-action="Index">@Localizer["FormsForms"]</a></li>
             <li><a asp-area="" asp-controller="Blocks" asp-action="Index">@Localizer["FormsBlocks"]</a></li>
             <li><a asp-area="" asp-controller="Questions" asp-action="Index">@Localizer["FormsQuestions"]</a></li>
             <li><a asp-area="" asp-controller="Options" asp-action="Index">@Localizer["FormsOptions"]</a></li>
@@ -13,6 +13,23 @@
         </ul>
     </li>
 
+    <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-universal-access"></i><span>@Localizer["Organization"]</span></a>
+        <ul class="dropdown-menu">
+            <li><a asp-area="" asp-controller="Associations" asp-action="Index">@Localizer["OrganizationAssociations"]</a></li>
+            <!-- <li><a asp-area="" asp-controller="" asp-action="Index">@Localizer["OrganizationPeople"]</a></li> -->
+        </ul>
+    </li>
+    <!--
+    <li class="dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-globe-americas"></i><span>@Localizer["Geography"]</span></a>
+        <ul class="dropdown-menu">
+            <li><a asp-area="" asp-controller="" asp-action="Index">@Localizer["GeographyCountries"]</a></li>
+            <li><a asp-area="" asp-controller="" asp-action="Index">@Localizer["GeographyAdm1"]</a></li>
+            <li><a asp-area="" asp-controller="" asp-action="Index">@Localizer["GeographyAdm2"]</a></li>
+        </ul>
+    </li>
+    -->
     <li class="dropdown">
         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i><span>@Localizer["Users"]</span></a>
         <ul class="dropdown-menu">
@@ -29,7 +46,7 @@
 
 
     <li class="menu-header">@Localizer["Reports"]</li>
-    
+
 
 </ul>
 

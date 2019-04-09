@@ -617,5 +617,59 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
                 return ResourceManager.GetString("FrmQuestionsUpdated", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string SocAssociationsCreated {
+            get {
+                return ResourceManager.GetString("SocAssociationsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string SocAssociationsEnable {
+            get {
+                return ResourceManager.GetString("SocAssociationsEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string SocAssociationsExtId {
+            get {
+                return ResourceManager.GetString("SocAssociationsExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string SocAssociationsId {
+            get {
+                return ResourceManager.GetString("SocAssociationsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string SocAssociationsName {
+            get {
+                return ResourceManager.GetString("SocAssociationsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string SocAssociationsUpdated {
+            get {
+                return ResourceManager.GetString("SocAssociationsUpdated", resourceCulture);
+            }
+        }
     }
 }

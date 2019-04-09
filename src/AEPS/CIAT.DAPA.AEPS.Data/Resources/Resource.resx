@@ -303,4 +303,22 @@
   <data name="FrmQuestionsUpdated" xml:space="preserve">
     <value>Date updated</value>
   </data>
+  <data name="SocAssociationsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="SocAssociationsEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="SocAssociationsExtId" xml:space="preserve">
+    <value>Extern Id</value>
+  </data>
+  <data name="SocAssociationsId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="SocAssociationsName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SocAssociationsUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
 </root>

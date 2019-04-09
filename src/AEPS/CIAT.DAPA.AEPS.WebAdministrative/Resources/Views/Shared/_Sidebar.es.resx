@@ -138,8 +138,29 @@
   <data name="FormsRules" xml:space="preserve">
     <value>Reglas</value>
   </data>
+  <data name="Geography" xml:space="preserve">
+    <value>Geografía</value>
+  </data>
+  <data name="GeographyAdm1" xml:space="preserve">
+    <value>Nivel administrativo 1</value>
+  </data>
+  <data name="GeographyAdm2" xml:space="preserve">
+    <value>Nivel administrativo 2</value>
+  </data>
+  <data name="GeographyCountries" xml:space="preserve">
+    <value>Países</value>
+  </data>
   <data name="Management" xml:space="preserve">
     <value>Administración</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Organización</value>
+  </data>
+  <data name="OrganizationAssociations" xml:space="preserve">
+    <value>Asociaciones</value>
+  </data>
+  <data name="OrganizationPeople" xml:space="preserve">
+    <value>Personas</value>
   </data>
   <data name="Reports" xml:space="preserve">
     <value>Reportes</value>
