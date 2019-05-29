@@ -165,6 +165,21 @@
   <data name="Reports" xml:space="preserve">
     <value>Reportes</value>
   </data>
+  <data name="ReportsCrop" xml:space="preserve">
+    <value>Cultivo</value>
+  </data>
+  <data name="ReportsCropDisease" xml:space="preserve">
+    <value>Enfermedades</value>
+  </data>
+  <data name="ReportsCropPerformance" xml:space="preserve">
+    <value>Desempeño del cultivo</value>
+  </data>
+  <data name="ReportsManagement" xml:space="preserve">
+    <value>Administración</value>
+  </data>
+  <data name="ReportsManagementPerformance" xml:space="preserve">
+    <value>Ejecución</value>
+  </data>
   <data name="Settings" xml:space="preserve">
     <value>Ajustes</value>
   </data>

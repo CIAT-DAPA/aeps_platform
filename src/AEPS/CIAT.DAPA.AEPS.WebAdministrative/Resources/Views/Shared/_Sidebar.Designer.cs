@@ -205,6 +205,51 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Crop.
+        /// </summary>
+        public static string ReportsCrop {
+            get {
+                return ResourceManager.GetString("ReportsCrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Diseases.
+        /// </summary>
+        public static string ReportsCropDisease {
+            get {
+                return ResourceManager.GetString("ReportsCropDisease", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crop performance.
+        /// </summary>
+        public static string ReportsCropPerformance {
+            get {
+                return ResourceManager.GetString("ReportsCropPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Management.
+        /// </summary>
+        public static string ReportsManagement {
+            get {
+                return ResourceManager.GetString("ReportsManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Performance.
+        /// </summary>
+        public static string ReportsManagementPerformance {
+            get {
+                return ResourceManager.GetString("ReportsManagementPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {

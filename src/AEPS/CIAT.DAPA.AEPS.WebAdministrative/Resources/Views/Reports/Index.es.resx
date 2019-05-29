@@ -117,73 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Forms" xml:space="preserve">
-    <value>Forms</value>
+  <data name="Action" xml:space="preserve">
+    <value>Desempeño de cultivo</value>
   </data>
-  <data name="FormsBlocks" xml:space="preserve">
-    <value>Blocks</value>
+  <data name="Description" xml:space="preserve">
+    <value>En esta sección usted puede ver el desempeño de un cultivo</value>
   </data>
-  <data name="FormsForms" xml:space="preserve">
-    <value>Forms</value>
-  </data>
-  <data name="FormsHome" xml:space="preserve">
-    <value>AEPS</value>
-  </data>
-  <data name="FormsOptions" xml:space="preserve">
-    <value>Options</value>
-  </data>
-  <data name="FormsQuestions" xml:space="preserve">
-    <value>Questions</value>
-  </data>
-  <data name="FormsRules" xml:space="preserve">
-    <value>Rules</value>
-  </data>
-  <data name="Geography" xml:space="preserve">
-    <value>Geography</value>
-  </data>
-  <data name="GeographyAdm1" xml:space="preserve">
-    <value>Administration level 1</value>
-  </data>
-  <data name="GeographyAdm2" xml:space="preserve">
-    <value>Administration level 2</value>
-  </data>
-  <data name="GeographyCountries" xml:space="preserve">
-    <value>Countries</value>
-  </data>
-  <data name="Management" xml:space="preserve">
-    <value>Management</value>
-  </data>
-  <data name="Organization" xml:space="preserve">
-    <value>Setup</value>
-  </data>
-  <data name="OrganizationAssociations" xml:space="preserve">
-    <value>Associations</value>
-  </data>
-  <data name="OrganizationPeople" xml:space="preserve">
-    <value>People</value>
-  </data>
-  <data name="Reports" xml:space="preserve">
-    <value>Reports</value>
-  </data>
-  <data name="ReportsCrop" xml:space="preserve">
-    <value>Crop</value>
-  </data>
-  <data name="ReportsCropDisease" xml:space="preserve">
-    <value>Diseases</value>
-  </data>
-  <data name="ReportsCropPerformance" xml:space="preserve">
-    <value>Crop performance</value>
-  </data>
-  <data name="ReportsManagement" xml:space="preserve">
-    <value>Management</value>
-  </data>
-  <data name="ReportsManagementPerformance" xml:space="preserve">
-    <value>Performance</value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="Users" xml:space="preserve">
-    <value>Users</value>
+  <data name="Title" xml:space="preserve">
+    <value>Reporte</value>
   </data>
 </root>
