@@ -180,9 +180,6 @@
   <data name="ReportsManagementPerformance" xml:space="preserve">
     <value>Ejecución</value>
   </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Ajustes</value>
-  </data>
   <data name="Users" xml:space="preserve">
     <value>Usuarios</value>
   </data>
