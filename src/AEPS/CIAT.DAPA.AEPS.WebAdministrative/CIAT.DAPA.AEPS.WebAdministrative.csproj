@@ -19,6 +19,15 @@
     <ProjectReference Include="..\CIAT.DAPA.AEPS.Users\CIAT.DAPA.AEPS.Users.csproj" />
   </ItemGroup>
 
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <Exec Command="bower install" />
+    <Exec Command="dotnet bundle" />
+  </Target>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.301" />
+  </ItemGroup>
+  
   <ItemGroup>
     <Compile Update="Resources\Views\Account\ConfirmEmail.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -392,13 +401,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Files\Import\" />
-    <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="wwwroot\css\stisla\" />
-    <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
 </Project>
