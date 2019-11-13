@@ -252,7 +252,12 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                         ExtId = xlsform.Settings.FormId
                     };
                     await rForms.InsertAsync(form);
-
+                    // Save form with id
+                    using (stream = new FileStream(ImportFolder + "form-" + form.Id.ToString(), FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                        stream.Close();
+                    }
                     // Settings form
                     formSettings = GetSettings(xlsform.Settings, form);
                     foreach (var fs in formSettings)
@@ -261,70 +266,83 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                     // Saving blocks and questions
                     foreach (var s in xlsform.Surveys)
                     {
-                        // Start a group, it could be a group or repeat
-                        if (s.Type.Equals("begin group") || s.Type.Equals("begin repeat"))
+                        try
                         {
-                            block = new FrmBlocks()
+                            // Start a group, it could be a group or repeat
+                            if (s.Type.Equals("begin group") || s.Type.Equals("begin repeat"))
                             {
-                                Name = s.Name,
-                                Title = s.Label,
-                                Description = s.Label,
-                                Repeat = (byte)(s.Type.Equals("begin repeat") ? 1 : 0),
-
-                            };
-                            block = await rBlocks.InsertAsync(block);
-                            blockForm = new FrmBlocksForms()
-                            {
-                                Block = block.Id,
-                                Form = form.Id,
-                                Order = order
-                            };
-                            await rBlocksForms.InsertAsync(blockForm);
-                        }
-                        // End the group
-                        else if (s.Type.StartsWith("end"))
-                        {
-                            block = null;
-                        }
-                        // Questions
-                        else
-                        {
-                            types = s.Type.Split(" ");
-
-                            question = new FrmQuestions()
-                            {
-                                Block = block.Id,
-                                Name = s.Name,
-                                Label = s.Label,
-                                Description = s.Hint,
-                                Type = GetTypeODK(types[0]),
-                                Order = order
-                            };
-
-                            question = await rQuestions.InsertAsync(question);
-
-                            // Question Rules
-                            questionRules = GetQuestionRules(s, question);
-                            foreach (var qr in questionRules)
-                                await rQuestionsRules.InsertAsync(qr);
-
-                            // Selection questions
-                            if (question.Type.Equals("unique") || question.Type.Equals("multiple"))
-                            {
-                                options = new List<FrmOptions>();
-                                foreach (var o in xlsform.Choices.Where(p => p.ListName.Equals(types[1])))
+                                block = new FrmBlocks()
                                 {
-                                    await rOptions.InsertAsync(new FrmOptions()
+                                    Name = s.Name,
+                                    Title = s.Label,
+                                    Description = s.Label,
+                                    Repeat = (byte)(s.Type.Equals("begin repeat") ? 1 : 0),
+
+                                };
+                                block = await rBlocks.InsertAsync(block);
+                                blockForm = new FrmBlocksForms()
+                                {
+                                    Block = block.Id,
+                                    Form = form.Id,
+                                    Order = order
+                                };
+                                await rBlocksForms.InsertAsync(blockForm);
+                            }
+                            // End the group
+                            else if (s.Type.StartsWith("end"))
+                            {
+                                block = null;
+                            }
+                            // Questions
+                            else
+                            {
+                                types = s.Type.Split(" ");
+
+                                string t = GetTypeODK(types[0]);
+
+                                if (!t.Equals("ignore"))
+                                {
+                                    question = new FrmQuestions()
                                     {
-                                        Question = question.Id,
-                                        Name = o.Name,
-                                        Label = o.Label
-                                    });
+                                        Block = block.Id,
+                                        Name = s.Name,
+                                        Label = s.Label,
+                                        Description = s.Hint,
+                                        Type = t,
+                                        Order = order
+                                    };
+
+                                    question = await rQuestions.InsertAsync(question);
+
+                                    // Question Rules
+                                    questionRules = GetQuestionRules(s, question);
+                                    foreach (var qr in questionRules)
+                                        await rQuestionsRules.InsertAsync(qr);
+
+                                    // Selection questions
+                                    if (question.Type.Equals("unique") || question.Type.Equals("multiple"))
+                                    {
+                                        options = new List<FrmOptions>();
+                                        foreach (var o in xlsform.Choices.Where(p => p.ListName.Equals(types[1])))
+                                        {
+                                            await rOptions.InsertAsync(new FrmOptions()
+                                            {
+                                                Question = question.Id,
+                                                Name = o.Name,
+                                                Label = o.Label
+                                            });
+                                        }
+                                    }
                                 }
                             }
-
+                            order += 1;
                         }
-                        order += 1;
+                        catch(Exception ex)
+                        {
+                            LogCritical(LogginEvent.Exception, "Processing the question " + s.ToString(), ex);
+
+                            throw ex;
+                        }
                     }
 
                     transaction.Commit();
@@ -404,7 +422,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// <returns>Type question</returns>
         private string GetTypeODK(string type)
         {
-            string r = string.Empty;
+            string r = "ignore";
             if (type.Equals("text"))
                 r = "string";
             else if (type.Equals("integer"))
@@ -421,8 +439,10 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                 r = "time";
             else if (type.Equals("dateTime"))
                 r = "datetime";
-            else if (type.Equals(""))
-                r = "bool";
+            else if (type.Equals("geopoint"))
+                r = "geopoint";
+            else if (type.Equals("calculate"))
+                r = "string";
             return r;
         }
 

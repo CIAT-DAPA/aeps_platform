@@ -214,20 +214,20 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Diseases.
-        /// </summary>
-        public static string ReportsCropDisease {
-            get {
-                return ResourceManager.GetString("ReportsCropDisease", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Crop performance.
         /// </summary>
         public static string ReportsCropPerformance {
             get {
                 return ResourceManager.GetString("ReportsCropPerformance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plant Healt.
+        /// </summary>
+        public static string ReportsCropPlantHealt {
+            get {
+                return ResourceManager.GetString("ReportsCropPlantHealt", resourceCulture);
             }
         }
         

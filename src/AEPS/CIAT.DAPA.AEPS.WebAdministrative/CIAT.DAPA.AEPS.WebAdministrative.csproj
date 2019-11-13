@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
   </PropertyGroup>
 
   <ItemGroup>
@@ -123,6 +124,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>XLSFormSummary.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Home\Index.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Index.resx</DependentUpon>
     </Compile>
     <Compile Update="Resources\Views\Options\Create.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -314,6 +320,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>XLSFormSummary.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Options\Create.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Create.Designer.cs</LastGenOutput>
@@ -386,6 +396,7 @@
 
   <ItemGroup>
     <Folder Include="Files\Import\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="wwwroot\css\stisla\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>

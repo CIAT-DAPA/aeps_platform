@@ -17,3 +17,5 @@ https://dotnetcoretutorials.com/2017/01/05/accessing-httpcontext-asp-net-core/
 
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.2
 https://jakeydocs.readthedocs.io/en/latest/fundamentals/logging.html
+
+https://retifrav.github.io/blog/2018/03/20/csharp-dotnet-core-identity-mysql/

@@ -117,70 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Forms" xml:space="preserve">
-    <value>Formularios</value>
+  <data name="Action" xml:space="preserve">
+    <value>Home</value>
   </data>
-  <data name="FormsBlocks" xml:space="preserve">
-    <value>Bloques</value>
+  <data name="Content" xml:space="preserve">
+    <value>Bienvenidos al sitio web de administración de agricultura específica por sitio</value>
   </data>
-  <data name="FormsForms" xml:space="preserve">
-    <value>Formularios</value>
+  <data name="Description" xml:space="preserve">
+    <value>Agricultura específica por sitio</value>
   </data>
-  <data name="FormsHome" xml:space="preserve">
+  <data name="Title" xml:space="preserve">
     <value>AEPS</value>
-  </data>
-  <data name="FormsOptions" xml:space="preserve">
-    <value>Opciones</value>
-  </data>
-  <data name="FormsQuestions" xml:space="preserve">
-    <value>Preguntas</value>
-  </data>
-  <data name="FormsRules" xml:space="preserve">
-    <value>Reglas</value>
-  </data>
-  <data name="Geography" xml:space="preserve">
-    <value>Geografía</value>
-  </data>
-  <data name="GeographyAdm1" xml:space="preserve">
-    <value>Nivel administrativo 1</value>
-  </data>
-  <data name="GeographyAdm2" xml:space="preserve">
-    <value>Nivel administrativo 2</value>
-  </data>
-  <data name="GeographyCountries" xml:space="preserve">
-    <value>Países</value>
-  </data>
-  <data name="Management" xml:space="preserve">
-    <value>Administración</value>
-  </data>
-  <data name="Organization" xml:space="preserve">
-    <value>Organización</value>
-  </data>
-  <data name="OrganizationAssociations" xml:space="preserve">
-    <value>Asociaciones</value>
-  </data>
-  <data name="OrganizationPeople" xml:space="preserve">
-    <value>Personas</value>
-  </data>
-  <data name="Reports" xml:space="preserve">
-    <value>Reportes</value>
-  </data>
-  <data name="ReportsCrop" xml:space="preserve">
-    <value>Cultivo</value>
-  </data>
-  <data name="ReportsCropPerformance" xml:space="preserve">
-    <value>Desempeño del cultivo</value>
-  </data>
-  <data name="ReportsCropPlantHealt" xml:space="preserve">
-    <value>Manejo fitosanitario</value>
-  </data>
-  <data name="ReportsManagement" xml:space="preserve">
-    <value>Administración</value>
-  </data>
-  <data name="ReportsManagementPerformance" xml:space="preserve">
-    <value>Ejecución</value>
-  </data>
-  <data name="Users" xml:space="preserve">
-    <value>Usuarios</value>
   </data>
 </root>

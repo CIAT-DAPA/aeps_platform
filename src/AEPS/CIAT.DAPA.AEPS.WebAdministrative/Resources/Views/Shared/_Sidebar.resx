@@ -168,11 +168,11 @@
   <data name="ReportsCrop" xml:space="preserve">
     <value>Crop</value>
   </data>
-  <data name="ReportsCropDisease" xml:space="preserve">
-    <value>Diseases</value>
-  </data>
   <data name="ReportsCropPerformance" xml:space="preserve">
     <value>Crop performance</value>
+  </data>
+  <data name="ReportsCropPlantHealt" xml:space="preserve">
+    <value>Plant Healt</value>
   </data>
   <data name="ReportsManagement" xml:space="preserve">
     <value>Management</value>
