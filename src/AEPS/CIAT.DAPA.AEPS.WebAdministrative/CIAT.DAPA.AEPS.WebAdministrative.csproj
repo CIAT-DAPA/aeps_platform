@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
-    <Exec Command="bower install" />
     <Exec Command="dotnet bundle" />
   </Target>
 
@@ -204,6 +203,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Index.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Views\Shared\_CookieConsentPartial.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_CookieConsentPartial.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Views\Shared\_Layout.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -384,6 +388,10 @@
     <EmbeddedResource Update="Resources\Views\Rules\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Shared\_CookieConsentPartial.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_CookieConsentPartial.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Shared\_Layout.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -115,7 +115,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            //app.UseCookiePolicy();
 
             app.UseAuthentication();
 
