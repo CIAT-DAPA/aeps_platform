@@ -28,11 +28,11 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Association")]
         [InverseProperty("SocTechnicalAssistants")]
-        public SocAssociations AssociationNavigation { get; set; }
+        public virtual SocAssociations AssociationNavigation { get; set; }
         [ForeignKey("Person")]
         [InverseProperty("SocTechnicalAssistants")]
-        public SocPeople PersonNavigation { get; set; }
+        public virtual SocPeople PersonNavigation { get; set; }
         [InverseProperty("TechnicalNavigation")]
-        public ICollection<FarProductionEvents> FarProductionEvents { get; set; }
+        public virtual ICollection<FarProductionEvents> FarProductionEvents { get; set; }
     }
 }

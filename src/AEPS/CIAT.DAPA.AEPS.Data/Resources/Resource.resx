@@ -117,8 +117,62 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FrmBlocksCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="FrmBlocksDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="FrmBlocksEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="FrmBlocksExtId" xml:space="preserve">
+    <value>Extern Id</value>
+  </data>
+  <data name="FrmBlocksFormsBlock" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="FrmBlocksFormsBlockNavigation" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="FrmBlocksFormsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="FrmBlocksFormsEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="FrmBlocksFormsForm" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="FrmBlocksFormsFormNavigation" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="FrmBlocksFormsOrder" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="FrmBlocksFormsUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
+  <data name="FrmBlocksId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="FrmBlocksName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="FrmBlocksRepeat" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
+  <data name="FrmBlocksTimes" xml:space="preserve">
+    <value>Times</value>
+  </data>
+  <data name="FrmBlocksTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="FrmBlocksUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
   <data name="FrmFormsCreated" xml:space="preserve">
-    <value>Date Created</value>
+    <value>Date created</value>
   </data>
   <data name="FrmFormsDescription" xml:space="preserve">
     <value>Description</value>
@@ -135,10 +189,136 @@
   <data name="FrmFormsName" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="FrmFormsSettingsApp" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="FrmFormsSettingsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="FrmFormsSettingsForm" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="FrmFormsSettingsFormsNavigation" xml:space="preserve">
+    <value>Form settings</value>
+  </data>
+  <data name="FrmFormsSettingsId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="FrmFormsSettingsName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="FrmFormsSettingsUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
+  <data name="FrmFormsSettingsValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
   <data name="FrmFormsTitle" xml:space="preserve">
     <value>Title</value>
   </data>
   <data name="FrmFormsUpdated" xml:space="preserve">
-    <value>Date Updated</value>
+    <value>Date updated</value>
+  </data>
+  <data name="FrmOptionsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="FrmOptionsEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="FrmOptionsExtId" xml:space="preserve">
+    <value>Extern Id</value>
+  </data>
+  <data name="FrmOptionsId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="FrmOptionsLabel" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="FrmOptionsName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="FrmOptionsQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="FrmOptionsQuestionNavigation" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="FrmOptionsUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
+  <data name="FrmQuestionsBlock" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="FrmQuestionsBlockNavigation" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="FrmQuestionsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="FrmQuestionsDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="FrmQuestionsEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="FrmQuestionsExtId" xml:space="preserve">
+    <value>Extern Id</value>
+  </data>
+  <data name="FrmQuestionsId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="FrmQuestionsLabel" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="FrmQuestionsName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="FrmQuestionsOrder" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="FrmQuestionsRulesApp" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="FrmQuestionsRulesId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="FrmQuestionsRulesMessage" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="FrmQuestionsRulesQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="FrmQuestionsRulesQuestionsNavigation" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="FrmQuestionsRulesRule" xml:space="preserve">
+    <value>Rule</value>
+  </data>
+  <data name="FrmQuestionsRulesType" xml:space="preserve">
+    <value>Type of rule</value>
+  </data>
+  <data name="FrmQuestionsType" xml:space="preserve">
+    <value>Type of question</value>
+  </data>
+  <data name="FrmQuestionsUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
+  <data name="SocAssociationsCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="SocAssociationsEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="SocAssociationsExtId" xml:space="preserve">
+    <value>Extern Id</value>
+  </data>
+  <data name="SocAssociationsId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="SocAssociationsName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SocAssociationsUpdated" xml:space="preserve">
+    <value>Date updated</value>
   </data>
 </root>

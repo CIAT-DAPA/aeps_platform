@@ -61,7 +61,169 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date Created.
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmBlocksCreated {
+            get {
+                return ResourceManager.GetString("FrmBlocksCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string FrmBlocksDescription {
+            get {
+                return ResourceManager.GetString("FrmBlocksDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string FrmBlocksEnable {
+            get {
+                return ResourceManager.GetString("FrmBlocksEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string FrmBlocksExtId {
+            get {
+                return ResourceManager.GetString("FrmBlocksExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string FrmBlocksFormsBlock {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string FrmBlocksFormsBlockNavigation {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsBlockNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmBlocksFormsCreated {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string FrmBlocksFormsEnable {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        public static string FrmBlocksFormsForm {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        public static string FrmBlocksFormsFormNavigation {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsFormNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        public static string FrmBlocksFormsOrder {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmBlocksFormsUpdated {
+            get {
+                return ResourceManager.GetString("FrmBlocksFormsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmBlocksId {
+            get {
+                return ResourceManager.GetString("FrmBlocksId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FrmBlocksName {
+            get {
+                return ResourceManager.GetString("FrmBlocksName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repeat.
+        /// </summary>
+        public static string FrmBlocksRepeat {
+            get {
+                return ResourceManager.GetString("FrmBlocksRepeat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Times.
+        /// </summary>
+        public static string FrmBlocksTimes {
+            get {
+                return ResourceManager.GetString("FrmBlocksTimes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string FrmBlocksTitle {
+            get {
+                return ResourceManager.GetString("FrmBlocksTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmBlocksUpdated {
+            get {
+                return ResourceManager.GetString("FrmBlocksUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
         /// </summary>
         public static string FrmFormsCreated {
             get {
@@ -115,6 +277,78 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string FrmFormsSettingsApp {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmFormsSettingsCreated {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        public static string FrmFormsSettingsForm {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form settings.
+        /// </summary>
+        public static string FrmFormsSettingsFormsNavigation {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsFormsNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmFormsSettingsId {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FrmFormsSettingsName {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmFormsSettingsUpdated {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string FrmFormsSettingsValue {
+            get {
+                return ResourceManager.GetString("FrmFormsSettingsValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         public static string FrmFormsTitle {
@@ -124,11 +358,317 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date Updated.
+        ///   Looks up a localized string similar to Date updated.
         /// </summary>
         public static string FrmFormsUpdated {
             get {
                 return ResourceManager.GetString("FrmFormsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmOptionsCreated {
+            get {
+                return ResourceManager.GetString("FrmOptionsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string FrmOptionsEnable {
+            get {
+                return ResourceManager.GetString("FrmOptionsEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string FrmOptionsExtId {
+            get {
+                return ResourceManager.GetString("FrmOptionsExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmOptionsId {
+            get {
+                return ResourceManager.GetString("FrmOptionsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label.
+        /// </summary>
+        public static string FrmOptionsLabel {
+            get {
+                return ResourceManager.GetString("FrmOptionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FrmOptionsName {
+            get {
+                return ResourceManager.GetString("FrmOptionsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmOptionsQuestion {
+            get {
+                return ResourceManager.GetString("FrmOptionsQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmOptionsQuestionNavigation {
+            get {
+                return ResourceManager.GetString("FrmOptionsQuestionNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmOptionsUpdated {
+            get {
+                return ResourceManager.GetString("FrmOptionsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string FrmQuestionsBlock {
+            get {
+                return ResourceManager.GetString("FrmQuestionsBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string FrmQuestionsBlockNavigation {
+            get {
+                return ResourceManager.GetString("FrmQuestionsBlockNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string FrmQuestionsCreated {
+            get {
+                return ResourceManager.GetString("FrmQuestionsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string FrmQuestionsDescription {
+            get {
+                return ResourceManager.GetString("FrmQuestionsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string FrmQuestionsEnable {
+            get {
+                return ResourceManager.GetString("FrmQuestionsEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string FrmQuestionsExtId {
+            get {
+                return ResourceManager.GetString("FrmQuestionsExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmQuestionsId {
+            get {
+                return ResourceManager.GetString("FrmQuestionsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label.
+        /// </summary>
+        public static string FrmQuestionsLabel {
+            get {
+                return ResourceManager.GetString("FrmQuestionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string FrmQuestionsName {
+            get {
+                return ResourceManager.GetString("FrmQuestionsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        public static string FrmQuestionsOrder {
+            get {
+                return ResourceManager.GetString("FrmQuestionsOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string FrmQuestionsRulesApp {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string FrmQuestionsRulesId {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string FrmQuestionsRulesMessage {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmQuestionsRulesQuestion {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string FrmQuestionsRulesQuestionsNavigation {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesQuestionsNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rule.
+        /// </summary>
+        public static string FrmQuestionsRulesRule {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesRule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of rule.
+        /// </summary>
+        public static string FrmQuestionsRulesType {
+            get {
+                return ResourceManager.GetString("FrmQuestionsRulesType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of question.
+        /// </summary>
+        public static string FrmQuestionsType {
+            get {
+                return ResourceManager.GetString("FrmQuestionsType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string FrmQuestionsUpdated {
+            get {
+                return ResourceManager.GetString("FrmQuestionsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string SocAssociationsCreated {
+            get {
+                return ResourceManager.GetString("SocAssociationsCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string SocAssociationsEnable {
+            get {
+                return ResourceManager.GetString("SocAssociationsEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string SocAssociationsExtId {
+            get {
+                return ResourceManager.GetString("SocAssociationsExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string SocAssociationsId {
+            get {
+                return ResourceManager.GetString("SocAssociationsId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string SocAssociationsName {
+            get {
+                return ResourceManager.GetString("SocAssociationsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string SocAssociationsUpdated {
+            get {
+                return ResourceManager.GetString("SocAssociationsUpdated", resourceCulture);
             }
         }
     }

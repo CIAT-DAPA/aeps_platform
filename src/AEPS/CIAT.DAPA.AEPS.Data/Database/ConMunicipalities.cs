@@ -31,8 +31,8 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("State")]
         [InverseProperty("ConMunicipalities")]
-        public ConStates StateNavigation { get; set; }
+        public virtual ConStates StateNavigation { get; set; }
         [InverseProperty("MunicipalityNavigation")]
-        public ICollection<SocPeople> SocPeople { get; set; }
+        public virtual ICollection<SocPeople> SocPeople { get; set; }
     }
 }

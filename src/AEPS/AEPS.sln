@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Links.txt = Links.txt
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIAT.DAPA.AEPS.ODK", "CIAT.DAPA.AEPS.ODK\CIAT.DAPA.AEPS.ODK.csproj", "{657B0EC6-7493-46D8-A60B-8294293B75E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CIAT.DAPA.AEPS.Users", "CIAT.DAPA.AEPS.Users\CIAT.DAPA.AEPS.Users.csproj", "{69CD9D54-3F94-4B17-BA54-649308D0D26B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{5650BF47-3166-4831-B5D2-2FCB2E1A01A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5650BF47-3166-4831-B5D2-2FCB2E1A01A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5650BF47-3166-4831-B5D2-2FCB2E1A01A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{657B0EC6-7493-46D8-A60B-8294293B75E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657B0EC6-7493-46D8-A60B-8294293B75E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657B0EC6-7493-46D8-A60B-8294293B75E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657B0EC6-7493-46D8-A60B-8294293B75E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69CD9D54-3F94-4B17-BA54-649308D0D26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CD9D54-3F94-4B17-BA54-649308D0D26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69CD9D54-3F94-4B17-BA54-649308D0D26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CD9D54-3F94-4B17-BA54-649308D0D26B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

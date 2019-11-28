@@ -39,8 +39,8 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Farm")]
         [InverseProperty("FarPlots")]
-        public FarFarms FarmNavigation { get; set; }
+        public virtual FarFarms FarmNavigation { get; set; }
         [InverseProperty("PlotNavigation")]
-        public ICollection<FarProductionEvents> FarProductionEvents { get; set; }
+        public virtual ICollection<FarProductionEvents> FarProductionEvents { get; set; }
     }
 }

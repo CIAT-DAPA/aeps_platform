@@ -13,6 +13,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
         {
             FarProductionEvents = new HashSet<FarProductionEvents>();
             FrmBlocksForms = new HashSet<FrmBlocksForms>();
+            FrmFormsSettings = new HashSet<FrmFormsSettings>();
         }
         [Display(Name = "FrmFormsId", ResourceType = typeof(Resource))]
         [Column("id", TypeName = "int(11)")]        
@@ -47,8 +48,10 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public DateTime Updated { get; set; }
 
         [InverseProperty("FormNavigation")]
-        public ICollection<FarProductionEvents> FarProductionEvents { get; set; }
+        public virtual ICollection<FarProductionEvents> FarProductionEvents { get; set; }
         [InverseProperty("FormNavigation")]
-        public ICollection<FrmBlocksForms> FrmBlocksForms { get; set; }
+        public virtual ICollection<FrmBlocksForms> FrmBlocksForms { get; set; }
+        [InverseProperty("FormNavigation")]
+        public virtual ICollection<FrmFormsSettings> FrmFormsSettings { get; set; }
     }
 }

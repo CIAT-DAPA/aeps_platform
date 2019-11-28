@@ -1,55 +1,69 @@
 ﻿@model CIAT.DAPA.AEPS.Data.Database.FrmForms
-@using Microsoft.AspNetCore.Mvc.Localization
-@inject IViewLocalizer Localizer
 
 @{
     ViewData["Title"] = Localizer["Title"];
+    ViewData["Action"] = Localizer["Action"];
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="section-title">@Localizer["Subtitle"]</h2>
+<p class="section-lead">@Localizer["Description"]</p>
 
-<h4>@Localizer["Subtitle"]</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+    <div class="col-12 col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header buttons">
+                <h4>@Localizer["Options"]</h4>
             </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+            <div class="card-body">
+                <a asp-action="Index" class="btn btn-icon btn-warning"><i class="fas fa-angle-left"></i> @Localizer["Return"]</a>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Enable" class="control-label"></label>
-                <input asp-for="Enable" class="form-control" />
-                <span asp-validation-for="Enable" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ExtId" class="control-label"></label>
-                <input asp-for="ExtId" class="form-control" />
-                <span asp-validation-for="ExtId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="@Localizer["Save"]" class="btn btn-default" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">@Localizer["Return"]</a>
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header buttons">
+                <h4>@Localizer["Subtitle"]</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Enable" class="control-label"></label>
+                        <input asp-for="Enable" class="form-control" />
+                        <span asp-validation-for="Enable" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExtId" class="control-label"></label>
+                        <input asp-for="ExtId" class="form-control" />
+                        <span asp-validation-for="ExtId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="@Localizer["Save"]" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts {

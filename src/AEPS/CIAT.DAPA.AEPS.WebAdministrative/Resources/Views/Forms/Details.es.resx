@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Action" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="Blocks" xml:space="preserve">
+    <value>Bloques</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Observa los detalles del formulario</value>
+  </data>
   <data name="Edit" xml:space="preserve">
     <value>Editar</value>
   </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opciones</value>
+  </data>
   <data name="Return" xml:space="preserve">
     <value>Volver al listado</value>
+  </data>
+  <data name="SetBlocks" xml:space="preserve">
+    <value>Asignar bloques</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Configuraciones</value>
+  </data>
+  <data name="SettingsApp" xml:space="preserve">
+    <value>Aplicación</value>
+  </data>
+  <data name="SettingsName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="SettingsValue" xml:space="preserve">
+    <value>Valor</value>
   </data>
   <data name="Subtitle" xml:space="preserve">
     <value>Detalles</value>

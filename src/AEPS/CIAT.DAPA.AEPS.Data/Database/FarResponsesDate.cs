@@ -23,9 +23,9 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Event")]
         [InverseProperty("FarResponsesDate")]
-        public FarProductionEvents EventNavigation { get; set; }
+        public virtual FarProductionEvents EventNavigation { get; set; }
         [ForeignKey("Question")]
         [InverseProperty("FarResponsesDate")]
-        public FrmQuestions QuestionNavigation { get; set; }
+        public virtual FrmQuestions QuestionNavigation { get; set; }
     }
 }

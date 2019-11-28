@@ -40,8 +40,8 @@ namespace CIAT.DAPA.AEPS.Data.Database
 
         [ForeignKey("Farmer")]
         [InverseProperty("FarFarms")]
-        public SocPeople FarmerNavigation { get; set; }
+        public virtual SocPeople FarmerNavigation { get; set; }
         [InverseProperty("FarmNavigation")]
-        public ICollection<FarPlots> FarPlots { get; set; }
+        public virtual ICollection<FarPlots> FarPlots { get; set; }
     }
 }

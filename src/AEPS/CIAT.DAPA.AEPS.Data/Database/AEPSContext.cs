@@ -14,7 +14,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
             : base(options)
         {
         }
-
+        
         public virtual DbSet<ConCountries> ConCountries { get; set; }
         public virtual DbSet<ConMunicipalities> ConMunicipalities { get; set; }
         public virtual DbSet<ConStates> ConStates { get; set; }
@@ -30,8 +30,10 @@ namespace CIAT.DAPA.AEPS.Data.Database
         public virtual DbSet<FrmBlocks> FrmBlocks { get; set; }
         public virtual DbSet<FrmBlocksForms> FrmBlocksForms { get; set; }
         public virtual DbSet<FrmForms> FrmForms { get; set; }
+        public virtual DbSet<FrmFormsSettings> FrmFormsSettings { get; set; }
         public virtual DbSet<FrmOptions> FrmOptions { get; set; }
         public virtual DbSet<FrmQuestions> FrmQuestions { get; set; }
+        public virtual DbSet<FrmQuestionsRules> FrmQuestionsRules { get; set; }
         public virtual DbSet<SocAssociations> SocAssociations { get; set; }
         public virtual DbSet<SocPeople> SocPeople { get; set; }
         public virtual DbSet<SocTechnicalAssistants> SocTechnicalAssistants { get; set; }
@@ -43,10 +45,13 @@ namespace CIAT.DAPA.AEPS.Data.Database
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySQL("server=localhost;port=3306;user=root;password=root;database=aeps_2_0");
             }
+            optionsBuilder.UseLazyLoadingProxies();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasAnnotation("ProductVersion", "2.2.3-servicing-35854");
+
             modelBuilder.Entity<ConCountries>(entity =>
             {
                 entity.Property(e => e.ExtId).IsUnicode(false);
@@ -348,6 +353,22 @@ namespace CIAT.DAPA.AEPS.Data.Database
                 entity.Property(e => e.Title).IsUnicode(false);
             });
 
+            modelBuilder.Entity<FrmFormsSettings>(entity =>
+            {
+                entity.HasIndex(e => e.Form)
+                    .HasName("fk_frm_forms_frm_forms_settings_idx");
+
+                entity.Property(e => e.Name).IsUnicode(false);
+
+                entity.Property(e => e.Value).IsUnicode(false);
+
+                entity.HasOne(d => d.FormNavigation)
+                    .WithMany(p => p.FrmFormsSettings)
+                    .HasForeignKey(d => d.Form)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_frm_forms_frm_forms_settings");
+            });
+
             modelBuilder.Entity<FrmOptions>(entity =>
             {
                 entity.HasIndex(e => e.Question)
@@ -364,7 +385,7 @@ namespace CIAT.DAPA.AEPS.Data.Database
                     .HasForeignKey(d => d.Question)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_frm_questions_frm_options");
-            });
+            });            
 
             modelBuilder.Entity<FrmQuestions>(entity =>
             {
@@ -384,6 +405,22 @@ namespace CIAT.DAPA.AEPS.Data.Database
                     .HasForeignKey(d => d.Block)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_frm_blocks_frm_questions");
+            });
+
+            modelBuilder.Entity<FrmQuestionsRules>(entity =>
+            {
+                entity.HasIndex(e => e.Question)
+                    .HasName("fk_frm_questions_frm_questions_rules_idx");
+
+                entity.Property(e => e.Message).IsUnicode(false);
+
+                entity.Property(e => e.Rule).IsUnicode(false);
+
+                entity.HasOne(d => d.QuestionNavigation)
+                    .WithMany(p => p.FrmQuestionsRules)
+                    .HasForeignKey(d => d.Question)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_frm_questions_frm_questions_rules");
             });
 
             modelBuilder.Entity<SocAssociations>(entity =>
