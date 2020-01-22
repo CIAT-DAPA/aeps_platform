@@ -133,6 +133,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>XLSFormSummary.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Views\Home\About.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>About.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Views\Home\Index.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -332,6 +337,10 @@
     <EmbeddedResource Update="Resources\Views\Forms\XLSFormSummary.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>XLSFormSummary.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\About.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>About.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Home\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

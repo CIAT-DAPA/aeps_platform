@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIAT.DAPA.AEPS.Data.Database
 {
-    [Table("con_states", Schema = "aeps_2_0")]
+    [Table("con_states")]
     public partial class ConStates
     {
         public ConStates()

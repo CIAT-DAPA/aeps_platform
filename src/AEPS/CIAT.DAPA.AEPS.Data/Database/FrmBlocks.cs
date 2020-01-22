@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIAT.DAPA.AEPS.Data.Database
 {
-    [Table("frm_blocks", Schema = "aeps_2_0")]
+    [Table("frm_blocks")]
     public partial class FrmBlocks
     {
         public FrmBlocks()
