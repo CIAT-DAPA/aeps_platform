@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConCountriesCreated" xml:space="preserve">
+    <value>Date created</value>
+  </data>
+  <data name="ConCountriesEnable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="ConCountriesExtId" xml:space="preserve">
+    <value>Extern Id</value>
+  </data>
+  <data name="ConCountriesId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="ConCountriesIso2" xml:space="preserve">
+    <value>Iso 2</value>
+  </data>
+  <data name="ConCountriesName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ConCountriesUpdated" xml:space="preserve">
+    <value>Date updated</value>
+  </data>
   <data name="FrmBlocksCreated" xml:space="preserve">
     <value>Date created</value>
   </data>

@@ -159,6 +159,9 @@
   <data name="OrganizationAssociations" xml:space="preserve">
     <value>Asociaciones</value>
   </data>
+  <data name="OrganizationCountries" xml:space="preserve">
+    <value>Países</value>
+  </data>
   <data name="OrganizationPeople" xml:space="preserve">
     <value>Personas</value>
   </data>

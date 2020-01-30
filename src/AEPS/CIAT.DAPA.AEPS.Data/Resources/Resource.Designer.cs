@@ -19,7 +19,7 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resource {
@@ -57,6 +57,69 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string ConCountriesCreated {
+            get {
+                return ResourceManager.GetString("ConCountriesCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string ConCountriesEnable {
+            get {
+                return ResourceManager.GetString("ConCountriesEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string ConCountriesExtId {
+            get {
+                return ResourceManager.GetString("ConCountriesExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string ConCountriesId {
+            get {
+                return ResourceManager.GetString("ConCountriesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iso 2.
+        /// </summary>
+        public static string ConCountriesIso2 {
+            get {
+                return ResourceManager.GetString("ConCountriesIso2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ConCountriesName {
+            get {
+                return ResourceManager.GetString("ConCountriesName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string ConCountriesUpdated {
+            get {
+                return ResourceManager.GetString("ConCountriesUpdated", resourceCulture);
             }
         }
         
