@@ -860,5 +860,131 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
                 return ResourceManager.GetString("SocAssociationsUpdated", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string SocPeopleAddress {
+            get {
+                return ResourceManager.GetString("SocPeopleAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cellphone.
+        /// </summary>
+        public static string SocPeopleCellphone {
+            get {
+                return ResourceManager.GetString("SocPeopleCellphone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string SocPeopleCreated {
+            get {
+                return ResourceManager.GetString("SocPeopleCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document.
+        /// </summary>
+        public static string SocPeopleDocument {
+            get {
+                return ResourceManager.GetString("SocPeopleDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string SocPeopleEmail {
+            get {
+                return ResourceManager.GetString("SocPeopleEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern id.
+        /// </summary>
+        public static string SocPeopleExtId {
+            get {
+                return ResourceManager.GetString("SocPeopleExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string SocPeopleId {
+            get {
+                return ResourceManager.GetString("SocPeopleId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kind document.
+        /// </summary>
+        public static string SocPeopleKindDocument {
+            get {
+                return ResourceManager.GetString("SocPeopleKindDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string SocPeopleLastName {
+            get {
+                return ResourceManager.GetString("SocPeopleLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Municipality.
+        /// </summary>
+        public static string SocPeopleMunicipality {
+            get {
+                return ResourceManager.GetString("SocPeopleMunicipality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Municipality.
+        /// </summary>
+        public static string SocPeopleMunicipalityNavigation {
+            get {
+                return ResourceManager.GetString("SocPeopleMunicipalityNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string SocPeopleName {
+            get {
+                return ResourceManager.GetString("SocPeopleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gender.
+        /// </summary>
+        public static string SocPeopleSex {
+            get {
+                return ResourceManager.GetString("SocPeopleSex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string SocPeopleUpdated {
+            get {
+                return ResourceManager.GetString("SocPeopleUpdated", resourceCulture);
+            }
+        }
     }
 }

@@ -384,4 +384,46 @@
   <data name="SocAssociationsUpdated" xml:space="preserve">
     <value>Fecha actualizado</value>
   </data>
+  <data name="SocPeopleAddress" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="SocPeopleCellphone" xml:space="preserve">
+    <value>Celular</value>
+  </data>
+  <data name="SocPeopleCreated" xml:space="preserve">
+    <value>Fecha creado</value>
+  </data>
+  <data name="SocPeopleDocument" xml:space="preserve">
+    <value>Documento</value>
+  </data>
+  <data name="SocPeopleEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SocPeopleExtId" xml:space="preserve">
+    <value>Código externo</value>
+  </data>
+  <data name="SocPeopleId" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="SocPeopleKindDocument" xml:space="preserve">
+    <value>Tipo de documento</value>
+  </data>
+  <data name="SocPeopleLastName" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="SocPeopleMunicipality" xml:space="preserve">
+    <value>Municipio</value>
+  </data>
+  <data name="SocPeopleMunicipalityNavigation" xml:space="preserve">
+    <value>Municipio</value>
+  </data>
+  <data name="SocPeopleName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="SocPeopleSex" xml:space="preserve">
+    <value>Género</value>
+  </data>
+  <data name="SocPeopleUpdated" xml:space="preserve">
+    <value>Fecha actualizado</value>
+  </data>
 </root>
