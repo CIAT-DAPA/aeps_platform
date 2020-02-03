@@ -124,6 +124,69 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string ConStatesCountry {
+            get {
+                return ResourceManager.GetString("ConStatesCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string ConStatesCountryNavigation {
+            get {
+                return ResourceManager.GetString("ConStatesCountryNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string ConStatesCreated {
+            get {
+                return ResourceManager.GetString("ConStatesCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string ConStatesExtId {
+            get {
+                return ResourceManager.GetString("ConStatesExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string ConStatesId {
+            get {
+                return ResourceManager.GetString("ConStatesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ConStatesName {
+            get {
+                return ResourceManager.GetString("ConStatesName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string ConStatesUpdated {
+            get {
+                return ResourceManager.GetString("ConStatesUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date created.
         /// </summary>
         public static string FrmBlocksCreated {

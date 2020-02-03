@@ -138,6 +138,27 @@
   <data name="ConCountriesUpdated" xml:space="preserve">
     <value>Fecha actualizado</value>
   </data>
+  <data name="ConStatesCountry" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="ConStatesCountryNavigation" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="ConStatesCreated" xml:space="preserve">
+    <value>Fecha creado</value>
+  </data>
+  <data name="ConStatesExtId" xml:space="preserve">
+    <value>Código externo</value>
+  </data>
+  <data name="ConStatesId" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="ConStatesName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="ConStatesUpdated" xml:space="preserve">
+    <value>Fecha actualizado</value>
+  </data>
   <data name="FrmBlocksCreated" xml:space="preserve">
     <value>Fecha creado</value>
   </data>

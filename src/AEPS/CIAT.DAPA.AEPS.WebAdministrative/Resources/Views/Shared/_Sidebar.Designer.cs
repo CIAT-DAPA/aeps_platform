@@ -205,6 +205,15 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to States.
+        /// </summary>
+        public static string OrganizationStates {
+            get {
+                return ResourceManager.GetString("OrganizationStates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reports.
         /// </summary>
         public static string Reports {

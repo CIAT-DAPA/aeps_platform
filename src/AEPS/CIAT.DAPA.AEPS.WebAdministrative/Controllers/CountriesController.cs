@@ -49,7 +49,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async override Task<IActionResult> Edit(int id, [Bind("Id,Name,Iso2,Enable,ExtId")] ConCountries entity)
+        public async override Task<IActionResult> Edit(int id, [Bind("Id,Name,Iso2,ExtId")] ConCountries entity)
         {
             try
             {

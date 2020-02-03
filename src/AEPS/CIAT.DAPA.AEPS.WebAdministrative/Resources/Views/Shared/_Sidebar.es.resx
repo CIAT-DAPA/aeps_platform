@@ -165,6 +165,9 @@
   <data name="OrganizationPeople" xml:space="preserve">
     <value>Personas</value>
   </data>
+  <data name="OrganizationStates" xml:space="preserve">
+    <value>Estados</value>
+  </data>
   <data name="Reports" xml:space="preserve">
     <value>Reportes</value>
   </data>

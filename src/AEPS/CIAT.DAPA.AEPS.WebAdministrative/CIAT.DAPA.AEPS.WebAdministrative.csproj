@@ -258,6 +258,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>_Sidebar.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Views\States\Create.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Create.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\States\Details.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Details.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\States\Edit.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Edit.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\States\Index.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Views\Users\Index.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -467,6 +487,22 @@
     <EmbeddedResource Update="Resources\Views\Shared\_Sidebar.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>_Sidebar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\States\Create.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Create.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\States\Details.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\States\Edit.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Edit.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\States\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views\Users\Index.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
