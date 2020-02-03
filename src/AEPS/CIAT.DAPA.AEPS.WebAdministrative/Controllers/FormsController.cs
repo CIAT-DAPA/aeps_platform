@@ -369,7 +369,7 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         /// <param name="odk"></param>
         /// <param name="form"></param>
         /// <returns></returns>
-        private List<FrmFormsSettings> GetSettings(Settings odk, FrmForms form)
+        private List<FrmFormsSettings> GetSettings(CIAT.DAPA.AEPS.ODK.Models.Settings odk, FrmForms form)
         {
             List<FrmFormsSettings> settings = new List<FrmFormsSettings>();
             if (!string.IsNullOrEmpty(odk.InstanceName))

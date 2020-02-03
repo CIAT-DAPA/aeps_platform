@@ -159,8 +159,17 @@
   <data name="OrganizationAssociations" xml:space="preserve">
     <value>Asociaciones</value>
   </data>
+  <data name="OrganizationCountries" xml:space="preserve">
+    <value>Países</value>
+  </data>
+  <data name="OrganizationMunicipalities" xml:space="preserve">
+    <value>Municipios</value>
+  </data>
   <data name="OrganizationPeople" xml:space="preserve">
     <value>Personas</value>
+  </data>
+  <data name="OrganizationStates" xml:space="preserve">
+    <value>Estados</value>
   </data>
   <data name="Reports" xml:space="preserve">
     <value>Reportes</value>

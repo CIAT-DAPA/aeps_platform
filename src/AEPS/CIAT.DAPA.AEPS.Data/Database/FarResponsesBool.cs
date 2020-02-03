@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIAT.DAPA.AEPS.Data.Database
 {
-    [Table("far_responses_bool", Schema = "aeps_2_0")]
+    [Table("far_responses_bool")]
     public partial class FarResponsesBool
     {
         [Column("id", TypeName = "bigint(20)")]

@@ -19,7 +19,7 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resource {
@@ -57,6 +57,195 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string ConCountriesCreated {
+            get {
+                return ResourceManager.GetString("ConCountriesCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable.
+        /// </summary>
+        public static string ConCountriesEnable {
+            get {
+                return ResourceManager.GetString("ConCountriesEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string ConCountriesExtId {
+            get {
+                return ResourceManager.GetString("ConCountriesExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string ConCountriesId {
+            get {
+                return ResourceManager.GetString("ConCountriesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iso 2.
+        /// </summary>
+        public static string ConCountriesIso2 {
+            get {
+                return ResourceManager.GetString("ConCountriesIso2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ConCountriesName {
+            get {
+                return ResourceManager.GetString("ConCountriesName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string ConCountriesUpdated {
+            get {
+                return ResourceManager.GetString("ConCountriesUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string ConMunicipalitiesCreated {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string ConMunicipalitiesExtId {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string ConMunicipalitiesId {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ConMunicipalitiesName {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string ConMunicipalitiesState {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string ConMunicipalitiesStateNavigation {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesStateNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string ConMunicipalitiesUpdate {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string ConStatesCountry {
+            get {
+                return ResourceManager.GetString("ConStatesCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string ConStatesCountryNavigation {
+            get {
+                return ResourceManager.GetString("ConStatesCountryNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string ConStatesCreated {
+            get {
+                return ResourceManager.GetString("ConStatesCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string ConStatesExtId {
+            get {
+                return ResourceManager.GetString("ConStatesExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string ConStatesId {
+            get {
+                return ResourceManager.GetString("ConStatesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ConStatesName {
+            get {
+                return ResourceManager.GetString("ConStatesName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string ConStatesUpdated {
+            get {
+                return ResourceManager.GetString("ConStatesUpdated", resourceCulture);
             }
         }
         
@@ -669,6 +858,132 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         public static string SocAssociationsUpdated {
             get {
                 return ResourceManager.GetString("SocAssociationsUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string SocPeopleAddress {
+            get {
+                return ResourceManager.GetString("SocPeopleAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cellphone.
+        /// </summary>
+        public static string SocPeopleCellphone {
+            get {
+                return ResourceManager.GetString("SocPeopleCellphone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string SocPeopleCreated {
+            get {
+                return ResourceManager.GetString("SocPeopleCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Document.
+        /// </summary>
+        public static string SocPeopleDocument {
+            get {
+                return ResourceManager.GetString("SocPeopleDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string SocPeopleEmail {
+            get {
+                return ResourceManager.GetString("SocPeopleEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern id.
+        /// </summary>
+        public static string SocPeopleExtId {
+            get {
+                return ResourceManager.GetString("SocPeopleExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string SocPeopleId {
+            get {
+                return ResourceManager.GetString("SocPeopleId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kind document.
+        /// </summary>
+        public static string SocPeopleKindDocument {
+            get {
+                return ResourceManager.GetString("SocPeopleKindDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string SocPeopleLastName {
+            get {
+                return ResourceManager.GetString("SocPeopleLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Municipality.
+        /// </summary>
+        public static string SocPeopleMunicipality {
+            get {
+                return ResourceManager.GetString("SocPeopleMunicipality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Municipality.
+        /// </summary>
+        public static string SocPeopleMunicipalityNavigation {
+            get {
+                return ResourceManager.GetString("SocPeopleMunicipalityNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string SocPeopleName {
+            get {
+                return ResourceManager.GetString("SocPeopleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gender.
+        /// </summary>
+        public static string SocPeopleSex {
+            get {
+                return ResourceManager.GetString("SocPeopleSex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string SocPeopleUpdated {
+            get {
+                return ResourceManager.GetString("SocPeopleUpdated", resourceCulture);
             }
         }
     }

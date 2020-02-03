@@ -43,6 +43,14 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
                 return (IAEPSRepository<T>)new RepositoryFrmFormsSettings(Context);
             else if (typeof(T) == typeof(SocAssociations))
                 return (IAEPSRepository<T>)new RepositorySocAssociations(Context);
+            else if (typeof(T) == typeof(ConCountries))
+                return (IAEPSRepository<T>)new RepositoryConCountries(Context);
+            else if (typeof(T) == typeof(ConStates))
+                return (IAEPSRepository<T>)new RepositoryConStates(Context);
+            else if (typeof(T) == typeof(ConMunicipalities))
+                return (IAEPSRepository<T>)new RepositoryConMunicipalities(Context);
+            else if (typeof(T) == typeof(SocPeople))
+                return (IAEPSRepository<T>)new RepositorySocPeople(Context);
             else
                 return null;
         }

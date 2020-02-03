@@ -47,6 +47,11 @@ namespace CIAT.DAPA.AEPS.WebAdministrative
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Configure<Settings>(options =>
+            {   
+                options.Installed = bool.Parse(Configuration.GetSection("Installed").Value);
+            });
+
             services.AddDbContext<AEPSContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("AEPSDatabase")));
 

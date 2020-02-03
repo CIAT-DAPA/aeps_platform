@@ -25,17 +25,19 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+        protected bool Installed { get; private set; }
 
         [TempData]
         public string ErrorMessage { get; set; }
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, 
+        public AccountController(IOptions<Settings> settings, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, 
                             IEmailSender emailSender,ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            Installed = settings.Value.Installed;
         }
 
         
@@ -48,6 +50,8 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             ViewData["ReturnUrl"] = returnUrl;
+            if (!Installed)
+                return RedirectToAction("Index", "Install");
             return View();
         }
 
@@ -116,9 +120,12 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
                     //var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
                     //await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    //await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
-                    return RedirectToLocal(returnUrl);
+                    if (!string.IsNullOrEmpty(returnUrl))
+                        return RedirectToLocal(returnUrl);
+                    else
+                        return RedirectToAction("Index", "Users");
                 }
                 AddErrors(result);
             }

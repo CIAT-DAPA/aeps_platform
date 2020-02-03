@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIAT.DAPA.AEPS.Data.Database
 {
-    [Table("far_responses_text", Schema = "aeps_2_0")]
+    [Table("far_responses_text")]
     public partial class FarResponsesText
     {
         [Column("id", TypeName = "bigint(20)")]

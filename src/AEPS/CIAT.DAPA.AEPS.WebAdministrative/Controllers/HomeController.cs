@@ -7,13 +7,31 @@ using Microsoft.AspNetCore.Mvc;
 using CIAT.DAPA.AEPS.WebAdministrative.Models;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace CIAT.DAPA.AEPS.WebAdministrative.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Get if the application was installed or not
+        /// </summary>
+        protected bool Installed { get; private set; }
+
+        /// <summary>
+        /// Construct method
+        /// </summary>
+        /// <param name="context">Context of the database</param>
+        public HomeController(IOptions<Settings> settings) : base()
+        {
+            Installed = settings.Value.Installed;
+        }
         public IActionResult Index()
         {
+            if (!Installed)
+                return RedirectToAction("Index", "Install");
             return View();
         }
 
