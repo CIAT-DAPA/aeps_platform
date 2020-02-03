@@ -117,79 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Forms" xml:space="preserve">
-    <value>Forms</value>
+  <data name="Action" xml:space="preserve">
+    <value>Registrar</value>
   </data>
-  <data name="FormsBlocks" xml:space="preserve">
-    <value>Blocks</value>
+  <data name="Description" xml:space="preserve">
+    <value>Diligencia los campos del formulario para registrar un nuevo municipio</value>
   </data>
-  <data name="FormsForms" xml:space="preserve">
-    <value>Forms</value>
+  <data name="Options" xml:space="preserve">
+    <value>Opciones</value>
   </data>
-  <data name="FormsHome" xml:space="preserve">
-    <value>AEPS</value>
+  <data name="Return" xml:space="preserve">
+    <value>Volver al listado</value>
   </data>
-  <data name="FormsOptions" xml:space="preserve">
-    <value>Options</value>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
   </data>
-  <data name="FormsQuestions" xml:space="preserve">
-    <value>Questions</value>
+  <data name="Subtitle" xml:space="preserve">
+    <value>Registrar</value>
   </data>
-  <data name="FormsRules" xml:space="preserve">
-    <value>Rules</value>
-  </data>
-  <data name="Geography" xml:space="preserve">
-    <value>Geography</value>
-  </data>
-  <data name="GeographyAdm1" xml:space="preserve">
-    <value>Administration level 1</value>
-  </data>
-  <data name="GeographyAdm2" xml:space="preserve">
-    <value>Administration level 2</value>
-  </data>
-  <data name="GeographyCountries" xml:space="preserve">
-    <value>Countries</value>
-  </data>
-  <data name="Management" xml:space="preserve">
-    <value>Management</value>
-  </data>
-  <data name="Organization" xml:space="preserve">
-    <value>Setup</value>
-  </data>
-  <data name="OrganizationAssociations" xml:space="preserve">
-    <value>Associations</value>
-  </data>
-  <data name="OrganizationCountries" xml:space="preserve">
-    <value>Countries</value>
-  </data>
-  <data name="OrganizationMunicipalities" xml:space="preserve">
-    <value>Municipalities</value>
-  </data>
-  <data name="OrganizationPeople" xml:space="preserve">
-    <value>People</value>
-  </data>
-  <data name="OrganizationStates" xml:space="preserve">
-    <value>States</value>
-  </data>
-  <data name="Reports" xml:space="preserve">
-    <value>Reports</value>
-  </data>
-  <data name="ReportsCrop" xml:space="preserve">
-    <value>Crop</value>
-  </data>
-  <data name="ReportsCropPerformance" xml:space="preserve">
-    <value>Crop performance</value>
-  </data>
-  <data name="ReportsCropPlantHealt" xml:space="preserve">
-    <value>Plant Healt</value>
-  </data>
-  <data name="ReportsManagement" xml:space="preserve">
-    <value>Management</value>
-  </data>
-  <data name="ReportsManagementPerformance" xml:space="preserve">
-    <value>Performance</value>
-  </data>
-  <data name="Users" xml:space="preserve">
-    <value>Users</value>
+  <data name="Title" xml:space="preserve">
+    <value>Municipios</value>
   </data>
 </root>

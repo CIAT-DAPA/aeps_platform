@@ -47,6 +47,8 @@ namespace CIAT.DAPA.AEPS.Data.Repositories
                 return (IAEPSRepository<T>)new RepositoryConCountries(Context);
             else if (typeof(T) == typeof(ConStates))
                 return (IAEPSRepository<T>)new RepositoryConStates(Context);
+            else if (typeof(T) == typeof(ConMunicipalities))
+                return (IAEPSRepository<T>)new RepositoryConMunicipalities(Context);
             else
                 return null;
         }

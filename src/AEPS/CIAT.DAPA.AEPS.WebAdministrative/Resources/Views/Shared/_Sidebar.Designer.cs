@@ -196,6 +196,15 @@ namespace CIAT.DAPA.AEPS.WebAdministrative.Resources.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Municipalities.
+        /// </summary>
+        public static string OrganizationMunicipalities {
+            get {
+                return ResourceManager.GetString("OrganizationMunicipalities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to People.
         /// </summary>
         public static string OrganizationPeople {

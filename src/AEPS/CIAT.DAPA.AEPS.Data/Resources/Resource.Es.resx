@@ -138,6 +138,27 @@
   <data name="ConCountriesUpdated" xml:space="preserve">
     <value>Fecha actualizado</value>
   </data>
+  <data name="ConMunicipalitiesCreated" xml:space="preserve">
+    <value>Fecha creado</value>
+  </data>
+  <data name="ConMunicipalitiesExtId" xml:space="preserve">
+    <value>Código externo</value>
+  </data>
+  <data name="ConMunicipalitiesId" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="ConMunicipalitiesName" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="ConMunicipalitiesState" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="ConMunicipalitiesStateNavigation" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="ConMunicipalitiesUpdate" xml:space="preserve">
+    <value>Fecha actualizado</value>
+  </data>
   <data name="ConStatesCountry" xml:space="preserve">
     <value>País</value>
   </data>

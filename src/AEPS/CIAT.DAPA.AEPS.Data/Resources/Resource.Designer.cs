@@ -124,6 +124,69 @@ namespace CIAT.DAPA.AEPS.Data.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date created.
+        /// </summary>
+        public static string ConMunicipalitiesCreated {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extern Id.
+        /// </summary>
+        public static string ConMunicipalitiesExtId {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesExtId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id.
+        /// </summary>
+        public static string ConMunicipalitiesId {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ConMunicipalitiesName {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string ConMunicipalitiesState {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string ConMunicipalitiesStateNavigation {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesStateNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date updated.
+        /// </summary>
+        public static string ConMunicipalitiesUpdate {
+            get {
+                return ResourceManager.GetString("ConMunicipalitiesUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
         public static string ConStatesCountry {
